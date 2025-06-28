@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAirway - Revolutioniere deine zahnmedizinische Praxis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Custom Styles & Colors -->
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            color: #2B4C6F;
+        }
+        .bg-navy { background-color: #2B4C6F; }
+        .text-navy { color: #2B4C6F; }
+        .border-navy { border-color: #2B4C6F; }
+        .bg-orange { background-color: #F36F21; }
+        .text-orange { color: #F36F21; }
+        .bg-light-blue { background-color: #F4F8FB; }
+        .hover-shadow-orange:hover {
+            box-shadow: 0 10px 15px -3px rgba(243, 111, 33, 0.1), 0 4px 6px -2px rgba(243, 111, 33, 0.05);
+            border-color: #F36F21;
+        }
+        .hover\\:bg-orange:hover { background-color: #F36F21 !important; }
+        .scroll-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* For Firefox */
+        }
+             .hover\\:bg-orange:hover { background-color: #F36F21 !important; }
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- 1. Header -->
+    <header id="home" class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-navy"> <img src="logo1_openairway_4c.png" alt="OpenAirway Logo" class="h-12 w-auto" alt=""></a>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-navy font-medium hover:text-orange transition-colors duration-300">Home</a>
+                <a href="#vision" class="text-navy font-medium hover:text-orange transition-colors duration-300">Vision</a>
+                <a href="#curriculum" class="text-navy font-medium hover:text-orange transition-colors duration-300">Curriculum</a>
+                <a href="#anmeldung" class="text-navy font-medium hover:text-orange transition-colors duration-300">Anmeldung</a>
+                <a href="#kontakt" class="text-navy font-medium hover:text-orange transition-colors duration-300">Kontakt</a>
+            </div>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#anmeldung" class="bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition">Jetzt Anmelden</a>
+                <a href="#kontakt" class="text-navy border border-gray-300 px-6 py-2 rounded-full font-bold hover:bg-orange hover:text-white transition-colors duration-300">Kontakt</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="menu-btn" class="text-navy focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block py-3 px-6 text-navy hover:bg-light-blue">Home</a>
+            <a href="#vision" class="block py-3 px-6 text-navy hover:bg-light-blue">Vision</a>
+            <a href="#curriculum" class="block py-3 px-6 text-navy hover:bg-light-blue">Curriculum</a>
+            <a href="#anmeldung" class="block py-3 px-6 text-navy hover:bg-light-blue">Anmeldung</a>
+            <a href="#kontakt" class="block py-3 px-6 text-navy hover:bg-light-blue">Kontakt</a>
+            <div class="p-6">
+                 <a href="#anmeldung" class="block w-full text-center bg-orange text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition">Jetzt Anmelden</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 2. Hero Section -->
+        <section class="relative py-20 md:py-32 overflow-hidden">
+            <!-- Background image -->
+            <img src="hero.png" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover z-0" style="object-position:left; transform:scaleX(-1);" />
+            <!-- Color overlay -->
+            <div class="absolute inset-0 w-full h-full bg-[#eaf6fd] z-10" style="opacity:0.75;"></div>
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <div class="mb-6 flex justify-center lg:justify-start">
+                            <img src="logo1_openairway_4c.png" alt="OpenAirway Logo" class="h-12 w-auto">
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold text-navy leading-tight mb-6">Revolutioniere deine Praxis mit Airway-Expertise</h1>
+                        <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">Buchen Sie jetzt Ihren Kurs bei den führenden Experten und erweitern Sie Ihr zahnmedizinisches Spektrum für eine ganzheitliche Patientenversorgung.</p>
+                        <div class="flex justify-center lg:justify-start items-center space-x-4">
+                            <a href="#anmeldung" class="bg-orange text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition">Kurs buchen</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 flex justify-center relative">
+                        <!-- <img src="hero.png" alt="Smiling Person" class="w-full max-w-lg rounded-lg shadow-2xl z-10"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Why OpenAirway? Section -->
+        <section class="py-12 -mt-24 relative z-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-lg border border-gray-200 transition-all duration-300 hover-shadow-orange">
+                        <div class="bg-light-blue text-navy rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                           <i data-feather="book-open" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-4">Wissenschaftlich fundiert</h3>
+                        <p class="text-gray-600">Unsere Inhalte basieren auf den neuesten wissenschaftlichen Erkenntnissen.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-lg border border-gray-200 transition-all duration-300 hover-shadow-orange">
+                         <div class="bg-light-blue text-navy rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-4">Langjährige Erfahrung</h3>
+                        <p class="text-gray-600">Profitieren Sie von der Expertise unserer erfahrenen Referenten.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-lg border border-gray-200 transition-all duration-300 hover-shadow-orange">
+                         <div class="bg-light-blue text-navy rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="heart" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-4">Funktion & Ästhetik</h3>
+                        <p class="text-gray-600">Wir verbinden Funktion mit höchsten ästhetischen Ansprüchen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Vision Section -->
+        <section id="vision" class="py-24 bg-light-blue">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-5/12">
+                        <img src="vis.jpg" alt="Dental Team" class="rounded-lg shadow-xl w-full object-cover">
+                    </div>
+                    <div class="md:w-7/12">
+                        <h2 class="text-4xl font-bold text-navy mb-6">Unsere Vision</h2>
+                        <p class="text-gray-700 leading-relaxed mb-6">Unsere Mission ist es, die Airway-fokussierte Zahnmedizin zu einem integralen Bestandteil der modernen Praxis zu machen. Wir befähigen Zahnärzte, durch ganzheitliche Ansätze die Lebensqualität ihrer Patienten nachhaltig zu verbessern.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-orange text-white rounded-full p-2 mr-4 mt-1"><i data-feather="check"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-navy">Präzision</h4>
+                                    <p class="text-gray-600">Modernste diagnostische Verfahren für exakte Behandlungspläne.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-orange text-white rounded-full p-2 mr-4 mt-1"><i data-feather="check"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-navy">Komfort</h4>
+                                    <p class="text-gray-600">Patientenfreundliche Methoden und eine angenehme Lernatmosphäre.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Curriculum & Module Overview -->
+        <section id="curriculum" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-navy">Unser Curriculum</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                        Ein umfassendes Ausbildungsprogramm, das Ihnen alle notwendigen Kenntnisse und Fähigkeitenvermittelt, um airway-orientierte Zahnmedizin erfolgreich in Ihre Praxis zu integrieren.
+                    </p>
+                </div>
+                <!-- Curriculum Feature Row -->
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Wissen Card -->
+                    <div class="rounded-2xl bg-[#547191] text-white p-10 flex flex-col h-full">
+                        <div class="flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-xl mb-6 mx-auto">
+                            <i data-feather="book-open" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Wissen</h3>
+                        <ul class="space-y-3 text-base">
+                            <li class="flex items-start gap-2"><span class="mt-1">&#10003;</span> Grundlagen der Atmungsphysiologie</li>
+                            <li class="flex items-start gap-2"><span class="mt-1">&#10003;</span> Schlafmedizinische Aspekte in der Zahnheilkunde</li>
+                            <li class="flex items-start gap-2"><span class="mt-1">&#10003;</span> Atemwegsprobleme erkennen und klassifizieren</li>
+                            <li class="flex items-start gap-2"><span class="mt-1">&#10003;</span> Digitale Diagnostik und Behandlungstools</li>
+                            <li class="flex items-start gap-2"><span class="mt-1">&#10003;</span> Interdisziplinäre Zusammenarbeit</li>
+                        </ul>
+                    </div>
+                    <!-- Kompetenzen Card -->
+                    <div class="rounded-2xl bg-white p-10 flex flex-col h-full shadow-lg">
+                        <div class="flex items-center justify-center w-16 h-16 bg-[#f4f8fb] rounded-xl mb-6 mx-auto">
+                            <i data-feather="tool" class="w-10 h-10 text-navy"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-6 text-center">Kompetenzen</h3>
+                        <ul class="space-y-3 text-base">
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Unterschiede zwischen Kindern und Erwachsenen</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Umfassende Diagnostik der Atemwege</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Behandlungsplanung und -durchführung</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Patientenkommunikation und -aufklärung</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Integration in den Praxisalltag</span></li>
+                        </ul>
+                    </div>
+                    <!-- Struktur Card -->
+                    <div class="rounded-2xl bg-white p-10 flex flex-col h-full shadow-lg">
+                        <div class="flex items-center justify-center w-16 h-16 bg-[#f4f8fb] rounded-xl mb-6 mx-auto">
+                            <i data-feather="grid" class="w-10 h-10 text-navy"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy mb-6 text-center">Struktur</h3>
+                        <ul class="space-y-3 text-base">
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">5 Module über 12 Monate verteilt</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Theoretische Vorträge von Experten</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Praktische Hands-on Workshops</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Fallbesprechungen und Gruppenarbeit</span></li>
+                            <li class="flex items-start gap-2 text-orange-500"><span class="mt-1">&#10003;</span><span class="text-gray-700">Abschlusszertifikat nach erfolgreicher Teilnahme</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module Navigation -->
+                <div class="flex justify-center mb-8 border-b border-gray-200">
+                    <button onclick="showModule(1)" id="tab1" class="px-8 py-4 font-bold text-navy border-b-2 border-orange">Modul 1</button>
+                    <button onclick="showModule(2)" id="tab2" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 2</button>
+                    <button onclick="showModule(3)" id="tab3" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 3</button>
+                    <button onclick="showModule(4)" id="tab4" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 4</button>
+                    <button onclick="showModule(5)" id="tab5" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 5</button>
+                </div>
+
+                <!-- Module Content -->
+                <div id="module1" class="module-content">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <h3 class="text-2xl font-bold text-navy mb-6">Einführung in die Airway-Zahnmedizin</h3>
+                            <p class="text-gray-600 mb-6">6./7. Februar 2026 · München</p>
+                            <p class="text-gray-700 mb-6">Der Start ins Curriculum: Warum Atmung und Haltung in der Zahnmedizin mehr bedeuten als gedacht. An zwei intensiven Tagen legen Sie das Fundament für ein neues Verständnis von Wachstum, Funktion und Prävention.</p>
+                            <h4 class="font-bold text-navy mb-4">Themen im Fokus:</h4>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>Grundlagen der Airway-Anatomie & -Physiologie</li>
+                                <li>Kieferentwicklung, Atmung & Haltung – Alles hängt zusammen</li>
+                                <li>Früherkennung & Klinisches Assessment</li>
+                                <li>Fallbeispiele, Gruppenarbeit & Befundinterpretation</li>
+                            </ul>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img src="mun.jpg" alt="Airway Medizin" class="rounded-lg shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="module2" class="module-content hidden">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <h3 class="text-2xl font-bold text-navy mb-6">Diagnostik mit Weitblick: Airway erkennen & handeln</h3>
+                            <p class="text-gray-600 mb-6">20./21. März 2026, Hamburg</p>
+                            <p class="text-gray-700 mb-6">Strukturierte Analyse und Therapiestrategien für Airway-Diagnostik.</p>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>KOIS-Modell</li>
+                                <li>Screening</li>
+                                <li>2D/3D/KI</li>
+                                <li>Befund zu Behandlung</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-700 italic">"Eigenen Airway-Leitfaden entwickeln – praxisnah und patientenzentriert."</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=600&q=80" alt="Airway Diagnostik" class="rounded-lg shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="module3" class="module-content hidden">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <h3 class="text-2xl font-bold text-navy mb-6">Früherkennen, gezielt begleiten: Airway bei Kindern</h3>
+                            <p class="text-gray-600 mb-6">5./6. Juni 2026, München</p>
+                            <p class="text-gray-700 mb-6">Kindliche Airway-Probleme erkennen und behandeln.</p>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>Stillprobleme</li>
+                                <li>Mundatmung</li>
+                                <li>Wachstum</li>
+                                <li>Therapiewege</li>
+                                <li>Teamarbeit mit Logopädie/HNO</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-700 italic">"Früherkennungskompetenz & Intervention im Kindesalter."</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Airway bei Kindern" class="rounded-lg shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="module4" class="module-content hidden">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <h3 class="text-2xl font-bold text-navy mb-6">Airway im Netzwerk denken: Schlafmedizin & Teamarbeit</h3>
+                            <p class="text-gray-600 mb-6">9./10. Oktober 2026, Hamburg</p>
+                            <p class="text-gray-700 mb-6">Airway als interdisziplinäre Praxis zwischen HNO, Logopädie, KFO & mehr.</p>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>Teamkommunikation</li>
+                                <li>Rollenklarheit</li>
+                                <li>Myofunktionelle Therapie</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-700 italic">"Funktionierende interdisziplinäre Zusammenarbeit verstehen & anwenden."</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=600&q=80" alt="Airway Netzwerk" class="rounded-lg shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="module5" class="module-content hidden">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <h3 class="text-2xl font-bold text-navy mb-6">Airway im Erwachsenenalter: Komplexität behandeln</h3>
+                            <p class="text-gray-600 mb-6">6./7. November 2026, München</p>
+                            <p class="text-gray-700 mb-6">Komplexe Airway-Störungen bei Erwachsenen früherkennen und therapieren.</p>
+                            <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
+                                <li>CMD</li>
+                                <li>Bruxismus</li>
+                                <li>Schlafapnoe</li>
+                                <li>Therapieworkshops</li>
+                                <li>Medizinkooperation</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                <p class="text-gray-700 italic">"Klares Verständnis für die Behandlung komplexer Fälle im Alltag."</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1512070679279-c2f999098c01?auto=format&fit=crop&w=600&q=80" alt="Airway Erwachsene" class="rounded-lg shadow-xl w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function showModule(moduleNumber) {
+                    // Hide all modules
+                    document.querySelectorAll('.module-content').forEach(module => {
+                        module.classList.add('hidden');
+                    });
+                    // Show selected module
+                    document.getElementById('module' + moduleNumber).classList.remove('hidden');
+                    
+                    // Update tab styles
+                    document.querySelectorAll('[id^="tab"]').forEach(tab => {
+                        tab.classList.remove('border-b-2', 'border-orange', 'text-navy');
+                        tab.classList.add('text-gray-500');
+                    });
+                    const selectedTab = document.getElementById('tab' + moduleNumber);
+                    selectedTab.classList.remove('text-gray-500');
+                    selectedTab.classList.add('border-b-2', 'border-orange', 'text-navy');
+                }
+            </script>
+        </section>
+          <!-- 7. Speakers Section -->
+        <section class="bg-light-blue py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-navy mb-4">Die Referenten der Module</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center">
+                    <!-- Dr. Christian Leonhardt -->
+                    <div class="text-center">
+                        <img src="leonhardt.jpg" alt="Dr. Christian Leonhardt" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-navy font-bold">Dr. Christian Leonhardt</h3>
+                    </div>
+                    <!-- Dr. Matthias Müller -->
+                    <div class="text-center">
+                        <img src="image 5.jpg" alt="Dr. Matthias Müller" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-navy font-bold">Dr. Matthias Müller</h3>
+                    </div>
+                    <!-- Dr. Josef Diemer -->
+                    <div class="text-center">
+                        <img src="Josef.jpg" alt="Dr. Josef Diemer" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-navy font-bold">Dr. Josef Diemer</h3>
+                    </div>
+                    <!-- Dr. Steffen Decker -->
+                    <div class="text-center">
+                        <img src="Steffen.jpg" alt="Dr. Steffen Decker" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-navy font-bold">Dr. Steffen Decker</h3>
+                    </div>
+                    <!-- Schlafmediziner -->
+                    <div class="text-center">
+                        <img src="Schlafmediziner.jpg" alt="Schlafmediziner" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-navy font-bold">Schlafmediziner</h3>
+                  
+                    </div>
+                    <!-- Open Airway Team Hamburg -->
+                    <div class="text-center">
+                        <img src="Team.jpg" alt="Open Airway Team Hamburg" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="text-navy font-bold">Open Airway Team Hamburg</h3>
+               
+                    </div>
+                </div>
+                </div>
+                
+           
+                <!-- Testimonials -->
+                   <div class="text-center ">
+                    <h2 class="text-4xl font-bold text-navy my-12">Die Referenten der Module</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                                   <div class="flex items-center mb-6">
+                            <img src="leonhardt.jpg" alt="Teilnehmer" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h5 class="font-bold text-navy">Dr. Christian Leonhardt</h5>
+                                <p class="text-sm text-gray-500">Founder Open Airway GmbH
+</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic mb-6">
+                             Dr. Christian Leonhardt steht für eine moderne, funktionell orientierte Zahnmedizin, die wissenschaftlich fundiert, interdisziplinär vernetzt und praxisnah umsetzbar ist. Mit seinem besonderen Fokus auf Atmung, Wachstum und funktionelle Zusammenhänge entwickelt er Behandlungskonzepte, die weit über die klassische Zahnmedizin hinausgehen. Als Visionär an der Schnittstelle von Funktion, Diagnostik und Therapie verbindet er klinische Exzellenz mit strategischem Denken – und gestaltet so den Wandel in der zahnärztlichen Praxis aktiv mit.</p>
+             
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                                   <div class="flex items-center mb-6">
+                            <img src="image 5.jpg" alt="Teilnehmer" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h5 class="font-bold text-navy">Dr. Matthias Müller  </h5>
+                                <p class="text-sm text-gray-500">Founder Open Airway GmbH
+</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic mb-6">
+Dr. Matthias Müller steht für präzise, verantwortungsvolle Zahnmedizin mit langjähriger Erfahrung und einem umfassenden Blick auf Funktion und Ästhetik.
+Seit über 30 Jahren ist Zahnmedizin für ihn Berufung und täglicher Antrieb. Sein Anspruch: die individuelle, nachhaltige Wiederherstellung der oralen Gesundheit – funktionell, ästhetisch und langfristig. Als Mitgründer der Open Airway GmbH bringt er seine umfassende Praxiserfahrung in interdisziplinäre Konzepte ein, die Zukunft und Alltag der modernen Zahnheilkunde verbinden.                            </p>
+             
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                                   <div class="flex items-center mb-6">
+                            <img src="falk.jpg" alt="Teilnehmer" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h5 class="font-bold text-navy">Kathrin Falk   </h5>
+                                <p class="text-sm text-gray-500">Founder Open Airway GmbH
+</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic mb-6">
+Als Mitgründerin der Open Airway GmbH bringt Kathrin Falk nicht nur strategisches Denken und Kommunikationsstärke ein, sondern auch die wertvolle Perspektive aus eigener Patientenerfahrung. Sie versteht, was Menschen im Gesundheitssystem bewegt und schafft Räume für echten Austausch, fachliche Weiterentwicklung und neue Formen der Zusammenarbeit. Mit ausgeprägter Netzwerkkompetenz, Innovationsfreude und einem klaren Blick für das Wesentliche verknüpft sie Menschen, Disziplinen und Ideen – strukturiert, lösungsorientiert und mit dem Ziel, Gesundheit neu zu denken.                                
+                                </p>
+             
+                    </div>
+                 
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-navy text-center mb-12">Frühere Teilnehmer sagen über OpenAirway</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-light-blue p-8 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic mb-6">"Der Kurs hat meine Sicht auf die Zahnmedizin komplett verändert. Ein absolutes Muss für jeden, der seine Praxis zukunftssicher aufstellen will."</p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=60&q=80" alt="Teilnehmer" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h5 class="font-bold text-navy">Dr. Eva Klein</h5>
+                                <p class="text-sm text-gray-500">Zahnärztin aus Hamburg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-light-blue p-8 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic mb-6">"Hervorragende Referenten und eine perfekte Organisation. Ich konnte das Gelernte sofort am nächsten Tag in der Praxis umsetzen."</p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=60&q=80" alt="Teilnehmer" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h5 class="font-bold text-navy">Dr. Lukas Fischer</h5>
+                                <p class="text-sm text-gray-500">Kieferorthopäde aus München</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-light-blue p-8 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic mb-6">"Das Netzwerk, das man hier aufbaut, ist unbezahlbar. Der Austausch mit Kollegen, die die gleiche Vision teilen, ist extrem wertvoll."</p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=60&q=80" alt="Teilnehmer" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h5 class="font-bold text-navy">Dr. Marie Huber</h5>
+                                <p class="text-sm text-gray-500">Zahnärztin aus Berlin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Locations Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-navy text-center mb-4">Außergewöhnliche Locations</h2>
+                <p class="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">Unsere Kurse finden in sorgfältig ausgewählten Locations statt, die ein optimales Lernumfeld bieten und gleichzeitig Inspiration und Austausch fördern.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- München - Studio G3 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                        <img src="mun.jpg" alt="München - Studio G3" class="w-full h-72 object-cover">
+                        <div class="p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-navy mb-1">München - Studio G3</h3>
+                            <p class="text-gray-700 mb-2">Gabrielstraße 3, 80636 München</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Zentrale Lage</span>
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Moderne Ausstattung</span>
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Lichtdurchflutet</span>
+                            </div>
+                            <p class="text-gray-600">Ein modernes Studio im Herzen von München mit hervorragender technischer Ausstattung und einer inspirierenden Atmosphäre für konzentriertes Lernen.</p>
+                        </div>
+                    </div>
+                    <!-- Hamburg - Ginn Hotels -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                        <img src="hamburg.jpg" alt="Hamburg - Ginn Hotels" class="w-full h-72 object-cover">
+                        <div class="p-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-bold text-navy mb-1">Hamburg - Ginn Hotels</h3>
+                            <p class="text-gray-700 mb-2">Nordkanalstraße 55, 20097 Hamburg</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Exklusives Ambiente</span>
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Erstklassiger Service</span>
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Zentrale Lage</span>
+                            </div>
+                            <p class="text-gray-600">Das elegante Ginn Hotel bietet perfekte Räumlichkeiten für unsere Kurse in Hamburg, mit exzellentem Service und einer angenehmen Lernatmosphäre.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certification Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="zer.jpg" alt="OpenAirway Zertifikat" class="rounded-lg shadow-2xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold text-navy mb-4">Zertifizierungsprozess</h2>
+                    <p class="text-gray-700 leading-relaxed">Nach erfolgreichem Abschluss aller Module erhalten Sie das OpenAirway-Zertifikat. Dieses anerkannte Siegel dokumentiert Ihre Expertise in der Airway-Zahnmedizin und signalisiert Patienten und Kollegen Ihre hohe Qualifikation. Werden Sie Teil eines exklusiven Netzwerks von zertifizierten Experten und heben Sie Ihre Praxis auf ein neues Level.</p>
+                </div>
+            </div>
+        </section>
+        
+      
+
+        <!-- 11. Registration Section -->
+        <section id="anmeldung" class="bg-light-blue py-20">
+            <div class="container mx-auto px-6">
+                <div class="bg-white max-w-2xl mx-auto p-10 rounded-lg shadow-2xl text-center">
+                    <h2 class="text-4xl font-bold text-navy mb-6">Anmeldung</h2>
+                    <p class="text-gray-600 mb-2"><span class="font-bold">Datum:</span> 15. - 17. November 2025</p>
+                    <p class="text-gray-600 mb-2"><span class="font-bold">Dauer:</span> 3 Tage Intensivkurs</p>
+                    <p class="text-gray-600 mb-8"><span class="font-bold">Preis:</span> 2.490,- € zzgl. MwSt.</p>
+                    <a href="#" class="bg-orange text-white w-full md:w-auto inline-block px-12 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-transform duration-300 transform hover:scale-105">Jetzt Anmelden</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Contact Section -->
+        <section id="kontakt" class="bg-light-blue py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl font-bold text-navy mb-2">Kontaktieren Sie uns</h2>
+                        <p class="text-lg text-gray-600">Haben Sie Fragen zu unserem Curriculum oder möchten Sie sich anmelden? Wir freuen uns auf Ihre Nachricht.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Form -->
+                        <div class="bg-white rounded-xl shadow p-8">
+                            <h3 class="text-2xl font-bold text-navy mb-6">Schreiben Sie uns</h3>
+                            <form>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-navy font-medium mb-1" for="name">Name</label>
+                                        <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-navy font-medium mb-1" for="email">E-Mail</label>
+                                        <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange" />
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-navy font-medium mb-1" for="subject">Betreff</label>
+                                    <input type="text" id="subject" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-navy font-medium mb-1" for="message">Nachricht</label>
+                                    <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"></textarea>
+                                </div>
+                                <div class="flex items-center mb-6">
+                                    <input type="checkbox" id="privacy" class="mr-2">
+                                    <label for="privacy" class="text-gray-700 text-sm">Ich habe die <a href="#" class="text-orange underline">Datenschutzerklärung</a> gelesen und akzeptiere diese.</label>
+                                </div>
+                                <button type="submit" class="bg-orange text-white w-full md:w-auto inline-block px-12 py-4 rounded-full font-bold text-lg hover:bg-opacity-90 transition-transform duration-300 transform hover:scale-105">Nachricht senden</button>
+                            </form>
+                        </div>
+                        <!-- Contact Info -->
+                        <div class="flex flex-col gap-6">
+                            <div class="bg-white rounded-xl shadow p-8 flex-1">
+                                <h3 class="text-2xl font-bold text-navy mb-6">Kontaktdaten</h3>
+                                <ul class="space-y-4 text-navy">
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1"><i data-feather="briefcase"></i></span>
+                                        <div>
+                                            <span class="font-bold">OpenAirway GmbH</span><br>
+                                            <span class="text-gray-600">Fort- und Weiterbildung für airway-orientierte Zahnmedizin</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1"><i data-feather="map-pin"></i></span>
+                                        <div>
+                                            <span class="font-bold">Adresse</span><br>
+                                            <span class="text-gray-600">Johannisbollwerk 19, 20459 Hamburg</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1"><i data-feather="phone"></i></span>
+                                        <div>
+                                            <span class="font-bold">Telefon</span><br>
+                                            <span class="text-gray-600">+49 (0) 40 123 456 78</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-1"><i data-feather="mail"></i></span>
+                                        <div>
+                                            <span class="font-bold">E-Mail</span><br>
+                                            <span class="text-gray-600">mail@open-airway.de</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 14. Footer -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-12 gap-8">
+                <div class="md:col-span-5">
+                    <h3 class="text-2xl font-bold mb-4">OpenAirway</h3>
+                    <p class="text-gray-400 pr-8">Führende Fortbildungen in der Airway-Zahnmedizin für eine ganzheitliche Patientenversorgung.</p>
+                    <div class="mt-6 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-bold tracking-wider mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#vision" class="text-gray-400 hover:text-white">Vision</a></li>
+                        <li><a href="#curriculum" class="text-gray-400 hover:text-white">Curriculum</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-bold tracking-wider mb-4">Info</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#anmeldung" class="text-gray-400 hover:text-white">Anmeldung</a></li>
+                        <li><a href="#kontakt" class="text-gray-400 hover:text-white">Kontakt</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Impressum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Datenschutz</a></li>
+                    </ul>
+                </div>
+                 <div class="md:col-span-3">
+                    <h4 class="font-bold tracking-wider mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Bleiben Sie auf dem Laufenden.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Ihre E-Mail" class="w-full bg-gray-700 text-white p-3 rounded-l-lg focus:outline-none">
+                        <button class="bg-orange text-white p-3 rounded-r-lg font-bold"><i data-feather="arrow-right"></i></button>
+                    </form>
+                 </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 OpenAirway. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Feather Icons
+        feather.replace();
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('svg');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Change icon to 'x' when menu is open
+            if (mobileMenu.classList.contains('hidden')) {
+                menuBtn.innerHTML = '<i data-feather="menu"></i>';
+            } else {
+                menuBtn.innerHTML = '<i data-feather="x"></i>';
+            }
+            feather.replace(); // Re-run feather to render the new icon
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for(let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-feather="menu"></i>';
+                feather.replace();
+            });
+        }
+    </script>
+</body>
+</html>
+
