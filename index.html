@@ -63,6 +63,18 @@
             fill: #4A6B8A !important;
             stroke: #4A6B8A !important;
         }
+        .speaker-card-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .speaker-card-link:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(44,76,111,0.15);
+        }
         /* Curriculum card accent colors */
         .curriculum-accent-blue { background: #eaf3fb; }
         .curriculum-accent-orange { background: #fff3ea; }
@@ -83,8 +95,7 @@
             background: linear-gradient(135deg, #1CBF73 0%, #6EE7B7 100%);
         }
         .curriculum-icon-circle {
-            background: #fff;
-            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+         
             border-radius: 9999px;
             width: 72px;
             height: 72px;
@@ -92,6 +103,9 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
+        }
+        #curriculum   .curriculum-icon-circle{
+            background-color: #fff;
         }
         .curriculum-title {
             color: #fff;
@@ -159,7 +173,116 @@
         .card-transition:hover svg {
     filter: brightness(0) invert(1);
 }
+    /* --- COLOR WORLD 1: Seriös (Professional, Trustworthy) --- */
+    .colorworld-serioes {
+      background: #1A2947; /* Navy */
+      color: #fff;
+    }
+    .colorworld-serioes .section-bg {
+      background: #E9E2D0; /* Sand/Beige */
+      color: #1A2947;
+    }
+    .colorworld-serioes .card {
+      background: #fff;
+      color: #1A2947;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(26,41,71,0.07);
+    }
+    .colorworld-serioes .accent {
+      color: #A4C9B2; /* Soft Green */
+    }
+    .colorworld-serioes .cta-btn {
+      background: #F28B30; /* Orange */
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      padding: 0.75em 2em;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: background 0.2s;
+    }
+    .speaker{
+        margin-bottom: 0;
+    }
+    .colorworld-serioes .cta-btn:hover {
+      background: #d96e00;
+    }
+    /* --- COLOR WORLD 2: Positiv (Positive, Fresh, Balanced) --- */
+    .colorworld-positiv {
+      background: #A4C9B2; /* Soft Green */
+      color: #1A2947;
+    }
+    .colorworld-positiv .section-bg {
+      background: #E9E2D0; /* Sand/Beige */
+      color: #1A2947;
+    }
+    .colorworld-positiv .card {
+      background: #fff;
+      color: #1A2947;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(26,41,71,0.07);
+    }
+    .colorworld-positiv .accent {
+      color: #1A2947; /* Navy as accent */
+    }
+    .colorworld-positiv .cta-btn {
+      background: #F28B30; /* Orange */
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      padding: 0.75em 2em;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: background 0.2s;
+    }
+    .colorworld-positiv .cta-btn:hover {
+      background: #d96e00;
+    }
+    /* Section separation */
+    section {
+      margin-bottom: 48px;
+      padding: 48px 0;
+    }
+    section#ueber-uns , #curriculum{
+           margin-bottom: 0px;
+    }
+    /* Example card style for both worlds */
+    .card {
+      padding: 2em;
+      margin: 1em 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .warum-light-blue { background: #EAF6FD; }
+    .warum-light-orange { background: #FDF6F0; }
+    .warum-light-green { background: #F0FAF6; }
+    .warum-light-sand { background: #F7F6F2; }
+    .curriculum-card.card-transition:hover,
+    .curriculum-card.card-transition:focus,
+    .curriculum-card.card-transition:active {
+      background: inherit;
+    }
+    .curriculum-card.warum-light-blue.card-transition:hover { background: linear-gradient(135deg, #4A6B8A 0%, #7FB3D5 100%); }
+    .curriculum-card.warum-light-orange.card-transition:hover { background: linear-gradient(135deg, #F28B30 0%, #F6C390 100%); }
+    .curriculum-card.warum-light-green.card-transition:hover { background: linear-gradient(135deg, #A4C9B2 0%, #1CBF73 100%); }
+    .curriculum-card.warum-light-sand.card-transition:hover { background: linear-gradient(135deg, #F28B30 0%, #F6C390 100%); }
+    .active-tab {
+      background: #fff !important;
+      color: #1A2947 !important;
+      border-bottom: 2px solid #F28B30 !important;
+      box-shadow: 0 2px 8px 0 rgba(26,41,71,0.10);
+      z-index: 2;
+    }
     </style>
+    <style>
+.speaker-card { background: none; border: none; cursor: pointer; transition: transform 0.15s; }
+.speaker-card:hover { transform: translateY(-8px) scale(1.04); box-shadow: 0 8px 32px rgba(44, 76, 111, 0.12); }
+#modal-overlay { display: none; }
+#modal-overlay.flex { display: flex; }
+.animate-fade-in { animation: fadeIn 0.2s; }
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+</style>
 </head>
 <body class="bg-white">
 
@@ -226,7 +349,7 @@
         </section>
 
         <!-- 3. Why OpenAirway? Section -->
-        <section class="py-12 -mt-24 relative z-20">
+        <section class="py-12 -mt-48 relative z-20">
             <div class="container mx-auto px-6 text-center">
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Card 1 -->
@@ -258,8 +381,12 @@
         </section>
 
         <!-- 4. Über uns Section (UPDATED) -->
-        <section id="ueber-uns" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
+        <section id="ueber-uns" class="py-24" style="background: #E9E2D0; position: relative;">
+            <!-- Optional: Wave divider at the top -->
+            <div style="position:absolute;top:0;left:0;width:100%;height:60px;overflow:hidden;line-height:0;z-index:1;">
+              <svg viewBox="0 0 500 60" preserveAspectRatio="none" style="height:100%;width:100%"><path d="M0,0 C150,60 350,0 500,60 L500,00 L0,0 Z" style="stroke: none; fill: #fff;"></path></svg>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
                 <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Warum OpenAirway?</h2>
                 <div class="flex justify-center mb-8">
                     <span class="block w-24 h-1 bg-orange rounded-full"></span>
@@ -270,41 +397,41 @@
                 </p>
                 <div class="grid md:grid-cols-4 gap-8 mb-16">
                     <!-- Früherkennen Card -->
-                    <div class="bg-white text-navy p-8 rounded-2xl flex flex-col items-center shadow-lg card-transition hover:bg-blue-custom hover:text-white hover:icon-white cursor-pointer">
-                        <div class="mb-6 flex items-center justify-center">
+                    <div class="curriculum-card warum-light-blue flex flex-col items-center shadow-lg p-8 rounded-2xl text-navy hover:curriculum-gradient-blue hover:text-white transition card-transition cursor-pointer">
+                        <div class="curriculum-icon-circle mx-auto mb-6">
                             <svg width="71" height="60" viewBox="0 0 71 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M35.2892 8.64267e-07C41.0294 8.64267e-07 46.4652 1.32222 51.5966 3.96667C56.5106 6.52296 60.6527 10.0599 64.0229 14.5775C67.3931 19.0951 69.5783 24.1526 70.5785 29.75C69.5783 35.3474 67.3931 40.4049 64.0229 44.9225C60.6527 49.4401 56.5106 52.977 51.5966 55.5333C46.4652 58.1778 41.0294 59.5 35.2892 59.5C29.549 59.5 24.1132 58.1778 18.9818 55.5333C14.0679 52.977 9.92577 49.4401 6.55558 44.9225C3.18538 40.4049 1.00019 35.3474 0 29.75C1.00019 24.1526 3.18538 19.0951 6.55558 14.5775C9.92577 10.0599 14.0679 6.52296 18.9818 3.96667C24.1132 1.32222 29.549 8.64267e-07 35.2892 8.64267e-07ZM35.2892 52.8889C39.8118 52.8889 44.117 51.8752 48.2047 49.8478C52.162 47.9085 55.5213 45.1759 58.2827 41.65C61.0441 38.1241 62.9248 34.1574 63.925 29.75C62.9248 25.3426 61.0441 21.3759 58.2827 17.85C55.5213 14.3241 52.162 11.5915 48.2047 9.65222C44.117 7.62482 39.8118 6.61111 35.2892 6.61111C30.7666 6.61111 26.4615 7.62482 22.3738 9.65222C18.4165 11.5915 15.0572 14.3241 12.2958 17.85C9.5344 21.3759 7.65361 25.3426 6.65342 29.75C7.65361 34.1574 9.5344 38.1241 12.2958 41.65C15.0572 45.1759 18.4165 47.9085 22.3738 49.8478C26.4615 51.8752 30.7666 52.8889 35.2892 52.8889ZM35.2892 44.625C32.6366 44.625 30.1904 43.9529 27.9509 42.6086C25.7113 41.2644 23.9284 39.4573 22.6021 37.1875C21.2757 34.9177 20.6126 32.4385 20.6126 29.75C20.6126 27.0615 21.2757 24.5823 22.6021 22.3125C23.9284 20.0427 25.7113 18.2356 27.9509 16.8914C30.1904 15.5471 32.6366 14.875 35.2892 14.875C37.9419 14.875 40.388 15.5471 42.6276 16.8914C44.8671 18.2356 46.6501 20.0427 47.9764 22.3125C49.3027 24.5823 49.9659 27.0615 49.9659 29.75C49.9659 32.4385 49.3027 34.9177 47.9764 37.1875C46.6501 39.4573 44.8671 41.2644 42.6276 42.6086C40.388 43.9529 37.9419 44.625 35.2892 44.625ZM35.2892 38.0139C36.7678 38.0139 38.1267 37.6393 39.3661 36.89C40.6054 36.1407 41.5948 35.1381 42.334 33.8819C43.0733 32.6258 43.4429 31.2485 43.4429 29.75C43.4429 28.2515 43.0733 26.8742 42.334 25.6181C41.5948 24.3619 40.6054 23.3593 39.3661 22.61C38.1267 21.8607 36.7678 21.4861 35.2892 21.4861C33.8107 21.4861 32.4517 21.8607 31.2124 22.61C29.973 23.3593 28.9837 24.3619 28.2444 25.6181C27.5052 26.8742 27.1355 28.2515 27.1355 29.75C27.1355 31.2485 27.5052 32.6258 28.2444 33.8819C28.9837 35.1381 29.973 36.1407 31.2124 36.89C32.4517 37.6393 33.8107 38.0139 35.2892 38.0139Z" fill="#4A6B8A"/>
-</svg>
+                                <path d="M35.2892 8.64267e-07C41.0294 8.64267e-07 46.4652 1.32222 51.5966 3.96667C56.5106 6.52296 60.6527 10.0599 64.0229 14.5775C67.3931 19.0951 69.5783 24.1526 70.5785 29.75C69.5783 35.3474 67.3931 40.4049 64.0229 44.9225C60.6527 49.4401 56.5106 52.977 51.5966 55.5333C46.4652 58.1778 41.0294 59.5 35.2892 59.5C29.549 59.5 24.1132 58.1778 18.9818 55.5333C14.0679 52.977 9.92577 49.4401 6.55558 44.9225C3.18538 40.4049 1.00019 35.3474 0 29.75C1.00019 24.1526 3.18538 19.0951 6.55558 14.5775C9.92577 10.0599 14.0679 6.52296 18.9818 3.96667C24.1132 1.32222 29.549 8.64267e-07 35.2892 8.64267e-07ZM35.2892 52.8889C39.8118 52.8889 44.117 51.8752 48.2047 49.8478C52.162 47.9085 55.5213 45.1759 58.2827 41.65C61.0441 38.1241 62.9248 34.1574 63.925 29.75C62.9248 25.3426 61.0441 21.3759 58.2827 17.85C55.5213 14.3241 52.162 11.5915 48.2047 9.65222C44.117 7.62482 39.8118 6.61111 35.2892 6.61111C30.7666 6.61111 26.4615 7.62482 22.3738 9.65222C18.4165 11.5915 15.0572 14.3241 12.2958 17.85C9.5344 21.3759 7.65361 25.3426 6.65342 29.75C7.65361 34.1574 9.5344 38.1241 12.2958 41.65C15.0572 45.1759 18.4165 47.9085 22.3738 49.8478C26.4615 51.8752 30.7666 52.8889 35.2892 52.8889ZM35.2892 44.625C32.6366 44.625 30.1904 43.9529 27.9509 42.6086C25.7113 41.2644 23.9284 39.4573 22.6021 37.1875C21.2757 34.9177 20.6126 32.4385 20.6126 29.75C20.6126 27.0615 21.2757 24.5823 22.6021 22.3125C23.9284 20.0427 25.7113 18.2356 27.9509 16.8914C30.1904 15.5471 32.6366 14.875 35.2892 14.875C37.9419 14.875 40.388 15.5471 42.6276 16.8914C44.8671 18.2356 46.6501 20.0427 47.9764 22.3125C49.3027 24.5823 49.9659 27.0615 49.9659 29.75C49.9659 32.4385 49.3027 34.9177 47.9764 37.1875C46.6501 39.4573 44.8671 41.2644 42.6276 42.6086C40.388 43.9529 37.9419 44.625 35.2892 44.625ZM35.2892 38.0139C36.7678 38.0139 38.1267 37.6393 39.3661 36.89C40.6054 36.1407 41.5948 35.1381 42.334 33.8819C43.0733 32.6258 43.4429 31.2485 43.4429 29.75C43.4429 28.2515 43.0733 26.8742 42.334 25.6181C41.5948 24.3619 40.6054 23.3593 39.3661 22.61C38.1267 21.8607 36.7678 21.4861 35.2892 21.4861C33.8107 21.4861 32.4517 21.8607 31.2124 22.61C29.973 23.3593 28.9837 24.3619 28.2444 25.6181C27.5052 26.8742 27.1355 28.2515 27.1355 29.75C27.1355 31.2485 27.5052 32.6258 28.2444 33.8819C28.9837 35.1381 29.973 36.1407 31.2124 36.89C32.4517 37.6393 33.8107 38.0139 35.2892 38.0139Z" fill="#4A6B8A"/>
+                            </svg>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Früherkennen</h3>
                         <p class="text-base">Atemwegsprobleme frühzeitig identifizieren und behandeln, bevor sie zu chronischen Gesundheitsproblemen führen.</p>
                     </div>
                     <!-- Vorbeugen Card -->
-                    <div class="bg-white text-navy p-8 rounded-2xl flex flex-col items-center shadow-lg border border-gray-100 card-transition hover:bg-blue-custom hover:text-white hover:icon-white cursor-pointer">
-                        <div class="mb-6 flex items-center justify-center">
+                    <div class="curriculum-card warum-light-orange flex flex-col items-center shadow-lg p-8 rounded-2xl text-navy hover:curriculum-gradient-orange hover:text-white transition card-transition cursor-pointer">
+                        <div class="curriculum-icon-circle mx-auto mb-6">
                             <svg width="69" height="86" viewBox="0 0 69 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M34.3387 2.98321e-05L65.7014 7.04508C66.5662 7.25153 67.2784 7.71604 67.838 8.43861C68.3976 9.16118 68.6774 9.96117 68.6774 10.8386V49.4703C68.6774 53.3928 67.7744 57.0572 65.9685 60.4636C64.1625 63.87 61.6571 66.6571 58.4521 68.8248L34.3387 85.16L10.2253 68.8248C7.02036 66.6571 4.5149 63.87 2.70894 60.4636C0.902981 57.0572 0 53.3928 0 49.4703V10.8386C0 9.96117 0.279797 9.16118 0.839391 8.43861C1.39898 7.71604 2.11119 7.25153 2.97602 7.04508L34.3387 2.98321e-05ZM34.3387 7.89668L7.63082 13.9353V49.4703C7.63082 52.1025 8.22857 54.554 9.42407 56.825C10.6196 59.0959 12.2856 60.9539 14.4223 62.3991L34.3387 75.8699L54.2552 62.3991C56.3918 60.9539 58.0579 59.0959 59.2534 56.825C60.4488 54.554 61.0466 52.1025 61.0466 49.4703V13.9353L34.3387 7.89668ZM51.3554 27.948L56.697 33.4447L32.431 58.0637L16.2537 41.651L21.6715 36.1543L32.431 47.1477L51.3554 27.948Z" fill="#4A6B8A"/>
-</svg>
+                                <path d="M34.3387 2.98321e-05L65.7014 7.04508C66.5662 7.25153 67.2784 7.71604 67.838 8.43861C68.3976 9.16118 68.6774 9.96117 68.6774 10.8386V49.4703C68.6774 53.3928 67.7744 57.0572 65.9685 60.4636C64.1625 63.87 61.6571 66.6571 58.4521 68.8248L34.3387 85.16L10.2253 68.8248C7.02036 66.6571 4.5149 63.87 2.70894 60.4636C0.902981 57.0572 0 53.3928 0 49.4703V10.8386C0 9.96117 0.279797 9.16118 0.839391 8.43861C1.39898 7.71604 2.11119 7.25153 2.97602 7.04508L34.3387 2.98321e-05ZM34.3387 7.89668L7.63082 13.9353V49.4703C7.63082 52.1025 8.22857 54.554 9.42407 56.825C10.6196 59.0959 12.2856 60.9539 14.4223 62.3991L34.3387 75.8699L54.2552 62.3991C56.3918 60.9539 58.0579 59.0959 59.2534 56.825C60.4488 54.554 61.0466 52.1025 61.0466 49.4703V13.9353L34.3387 7.89668ZM51.3554 27.948L56.697 33.4447L32.431 58.0637L16.2537 41.651L21.6715 36.1543L32.431 47.1477L51.3554 27.948Z" fill="#4A6B8A"/>
+                            </svg>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Vorbeugen</h3>
                         <p class="text-base">Präventive Maßnahmen entwickeln, die langfristig die Atemwegsgesundheit und damit die Lebensqualität verbessern.</p>
                     </div>
                     <!-- Langfristig denken Card -->
-                    <div class="bg-white text-navy p-8 rounded-2xl flex flex-col items-center shadow-lg border border-gray-100 card-transition hover:bg-blue-custom hover:text-white hover:icon-white cursor-pointer">
-                        <div class="mb-6 flex items-center justify-center">
+                    <div class="curriculum-card warum-light-green flex flex-col items-center shadow-lg p-8 rounded-2xl text-navy hover:curriculum-gradient-green hover:text-white transition card-transition cursor-pointer">
+                        <div class="curriculum-icon-circle mx-auto mb-6">
                             <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M35.0267 71C30.263 71 25.7096 70.077 21.3663 68.231C17.2098 66.4323 13.5086 63.8882 10.2628 60.5985C7.01701 57.3088 4.50676 53.5577 2.73208 49.345C0.910693 44.943 0 40.328 0 35.5C0 30.672 0.910693 26.057 2.73208 21.655C4.50676 17.4423 7.01701 13.6912 10.2628 10.4015C13.5086 7.11183 17.2098 4.56766 21.3663 2.769C25.7096 0.922998 30.263 -2.32458e-05 35.0267 -2.32458e-05C39.7903 -2.32458e-05 44.3438 0.922998 48.6871 2.769C52.8436 4.56766 56.5447 7.11183 59.7905 10.4015C63.0363 13.6912 65.5466 17.4423 67.3213 21.655C69.1426 26.057 70.0533 30.672 70.0533 35.5C70.0533 40.328 69.1426 44.943 67.3213 49.345C65.5466 53.5577 63.0363 57.3088 59.7905 60.5985C56.5447 63.8882 52.8436 66.4323 48.6871 68.231C44.3438 70.077 39.7903 71 35.0267 71ZM35.0267 63.9C40.1172 63.9 44.8341 62.5983 49.1774 59.995C53.3806 57.4863 56.7199 54.102 59.1951 49.842C61.7637 45.44 63.048 40.6593 63.048 35.5C63.048 30.3407 61.7637 25.56 59.1951 21.158C56.7199 16.898 53.3806 13.5137 49.1774 11.005C44.8341 8.40166 40.1172 7.1 35.0267 7.1C29.9361 7.1 25.2192 8.40166 20.8759 11.005C16.6727 13.5137 13.3335 16.898 10.8583 21.158C8.28965 25.56 7.00533 30.3407 7.00533 35.5C7.00533 40.6593 8.28965 45.44 10.8583 49.842C13.3335 54.102 16.6727 57.4863 20.8759 59.995C25.2192 62.5983 29.9361 63.9 35.0267 63.9ZM38.5293 35.5H52.54V42.6H31.524V17.75H38.5293V35.5Z" fill="#4A6B8A"/>
-</svg>
+                                <path d="M35.0267 71C30.263 71 25.7096 70.077 21.3663 68.231C17.2098 66.4323 13.5086 63.8882 10.2628 60.5985C7.01701 57.3088 4.50676 53.5577 2.73208 49.345C0.910693 44.943 0 40.328 0 35.5C0 30.672 0.910693 26.057 2.73208 21.655C4.50676 17.4423 7.01701 13.6912 10.2628 10.4015C13.5086 7.11183 17.2098 4.56766 21.3663 2.769C25.7096 0.922998 30.263 -2.32458e-05 35.0267 -2.32458e-05C39.7903 -2.32458e-05 44.3438 0.922998 48.6871 2.769C52.8436 4.56766 56.5447 7.11183 59.7905 10.4015C63.0363 13.6912 65.5466 17.4423 67.3213 21.655C69.1426 26.057 70.0533 30.672 70.0533 35.5C70.0533 40.328 69.1426 44.943 67.3213 49.345C65.5466 53.5577 63.0363 57.3088 59.7905 60.5985C56.5447 63.8882 52.8436 66.4323 48.6871 68.231C44.3438 70.077 39.7903 71 35.0267 71ZM35.0267 63.9C40.1172 63.9 44.8341 62.5983 49.1774 59.995C53.3806 57.4863 56.7199 54.102 59.1951 49.842C61.7637 45.44 63.048 40.6593 63.048 35.5C63.048 30.3407 61.7637 25.56 59.1951 21.158C56.7199 16.898 53.3806 13.5137 49.1774 11.005C44.8341 8.40166 40.1172 7.1 35.0267 7.1C29.9361 7.1 25.2192 8.40166 20.8759 11.005C16.6727 13.5137 13.3335 16.898 10.8583 21.158C8.28965 25.56 7.00533 30.3407 7.00533 35.5C7.00533 40.6593 8.28965 45.44 10.8583 49.842C13.3335 54.102 16.6727 57.4863 20.8759 59.995C25.2192 62.5983 29.9361 63.9 35.0267 63.9ZM38.5293 35.5H52.54V42.6H31.524V17.75H38.5293V35.5Z" fill="#4A6B8A"/>
+                            </svg>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Langfristig denken</h3>
                         <p class="text-base">Nachhaltige Behandlungskonzepte, die über die reine Symptombekämpfung hinausgehen und die Grundursachen adressieren.</p>
                     </div>
                     <!-- Funktion & Ästhetik Card -->
-                    <div class="bg-white text-navy p-8 rounded-2xl flex flex-col items-center shadow-lg border border-gray-100 card-transition hover:bg-blue-custom hover:text-white hover:icon-white cursor-pointer">
-                        <div class="mb-6 flex items-center justify-center">
+                    <div class="curriculum-card warum-light-sand flex flex-col items-center shadow-lg p-8 rounded-2xl text-navy hover:curriculum-gradient-orange hover:text-white transition card-transition cursor-pointer">
+                        <div class="curriculum-icon-circle mx-auto mb-6">
                             <svg width="70" height="62" viewBox="0 0 70 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M51.1938 -1.99005e-05C54.4967 -1.99005e-05 57.5353 0.867389 60.3096 2.60221C63.084 4.33703 65.2639 6.6946 66.8492 9.67493C68.5227 12.7887 69.3594 16.2361 69.3594 20.0171C69.3594 25.1771 68.1704 30.1369 65.7923 34.8965C63.7666 38.9444 60.8821 42.8367 57.1389 46.5732C54.2324 49.509 50.7755 52.3782 46.768 55.1806C44.5221 56.7374 41.5716 58.6057 37.9165 60.7853L36.3311 61.7195L34.7457 60.7853C30.9145 58.5167 27.8318 56.5595 25.4978 54.9137C21.3142 51.9778 17.7252 48.953 14.7306 45.8392C10.9434 41.8358 8.08092 37.6989 6.14326 33.4286L0 33.3619V26.6895L4.02945 26.7562C3.54503 24.5321 3.30283 22.2857 3.30283 20.0171C3.30283 16.2361 4.13954 12.7887 5.81298 9.67493C7.39833 6.6946 9.5782 4.33703 12.3526 2.60221C15.1269 0.867389 18.1656 -1.99005e-05 21.4684 -1.99005e-05C24.3308 -1.99005e-05 27.1713 0.7117 29.9897 2.13514C32.3677 3.29169 34.4815 4.80409 36.3311 6.67236C38.1807 4.80409 40.2945 3.29169 42.6725 2.13514C45.4909 0.7117 48.3314 -1.99005e-05 51.1938 -1.99005e-05ZM51.1938 6.67236C49.4323 6.67236 47.6488 7.10606 45.8432 7.97347C44.0377 8.84088 42.4303 9.98631 41.0211 11.4097L36.3311 16.1471L31.6411 11.4097C30.2319 9.98631 28.6245 8.84088 26.819 7.97347C25.0134 7.10606 23.2299 6.67236 21.4684 6.67236C19.3546 6.67236 17.4169 7.25063 15.6554 8.40718C13.8939 9.56372 12.4957 11.154 11.4608 13.1779C10.4259 15.2019 9.90848 17.5039 9.90848 20.0838C9.90848 22.308 10.1947 24.5321 10.7672 26.7562L17.9674 26.6895L24.7712 15.213L34.6797 31.8939L37.7843 26.6895H52.8452V33.3619H41.4835L34.6797 44.9051L24.7712 28.2241L21.6665 33.3619L13.5416 33.4286C16.0958 37.8768 19.9931 42.2139 25.2336 46.4397C27.5676 48.308 30.2319 50.1985 33.2264 52.1113C34.1512 52.6895 35.1861 53.3123 36.3311 53.9795C37.4761 53.3123 38.511 52.6895 39.4358 52.1113C42.4303 50.1985 45.0946 48.308 47.4286 46.4397C52.4489 42.3918 56.2361 38.2327 58.7903 33.9624C61.4326 29.5141 62.7537 24.888 62.7537 20.0838C62.7537 17.5039 62.2473 15.1908 61.2344 13.1446C60.2216 11.0984 58.8344 9.51924 57.0729 8.40718C55.3114 7.29511 53.3517 6.71684 51.1938 6.67236Z" fill="#4A6B8A"/>
-</svg>
+                                <path d="M51.1938 -1.99005e-05C54.4967 -1.99005e-05 57.5353 0.867389 60.3096 2.60221C63.084 4.33703 65.2639 6.6946 66.8492 9.67493C68.5227 12.7887 69.3594 16.2361 69.3594 20.0171C69.3594 25.1771 68.1704 30.1369 65.7923 34.8965C63.7666 38.9444 60.8821 42.8367 57.1389 46.5732C54.2324 49.509 50.7755 52.3782 46.768 55.1806C44.5221 56.7374 41.5716 58.6057 37.9165 60.7853L36.3311 61.7195L34.7457 60.7853C30.9145 58.5167 27.8318 56.5595 25.4978 54.9137C21.3142 51.9778 17.7252 48.953 14.7306 45.8392C10.9434 41.8358 8.08092 37.6989 6.14326 33.4286L0 33.3619V26.6895L4.02945 26.7562C3.54503 24.5321 3.30283 22.2857 3.30283 20.0171C3.30283 16.2361 4.13954 12.7887 5.81298 9.67493C7.39833 6.6946 9.5782 4.33703 12.3526 2.60221C15.1269 0.867389 18.1656 -1.99005e-05 21.4684 -1.99005e-05C24.3308 -1.99005e-05 27.1713 0.7117 29.9897 2.13514C32.3677 3.29169 34.4815 4.80409 36.3311 6.67236C38.1807 4.80409 40.2945 3.29169 42.6725 2.13514C45.4909 0.7117 48.3314 -1.99005e-05 51.1938 -1.99005e-05ZM51.1938 6.67236C49.4323 6.67236 47.6488 7.10606 45.8432 7.97347C44.0377 8.84088 42.4303 9.98631 41.0211 11.4097L36.3311 16.1471L31.6411 11.4097C30.2319 9.98631 28.6245 8.84088 26.819 7.97347C25.0134 7.10606 23.2299 6.67236 21.4684 6.67236C19.3546 6.67236 17.4169 7.25063 15.6554 8.40718C13.8939 9.56372 12.4957 11.154 11.4608 13.1779C10.4259 15.2019 9.90848 17.5039 9.90848 20.0838C9.90848 22.308 10.1947 24.5321 10.7672 26.7562L17.9674 26.6895L24.7712 15.213L34.6797 31.8939L37.7843 26.6895H52.8452V33.3619H41.4835L34.6797 44.9051L24.7712 28.2241L21.6665 33.3619L13.5416 33.4286C16.0958 37.8768 19.9931 42.2139 25.2336 46.4397C27.5676 48.308 30.2319 50.1985 33.2264 52.1113C34.1512 52.6895 35.1861 53.3123 36.3311 53.9795C37.4761 53.3123 38.511 52.6895 39.4358 52.1113C42.4303 50.1985 45.0946 48.308 47.4286 46.4397C52.4489 42.3918 56.2361 38.2327 58.7903 33.9624C61.4326 29.5141 62.7537 24.888 62.7537 20.0838C62.7537 17.5039 62.2473 15.1908 61.2344 13.1446C60.2216 11.0984 58.8344 9.51924 57.0729 8.40718C55.3114 7.29511 53.3517 6.71684 51.1938 6.67236Z" fill="#4A6B8A"/>
+                            </svg>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Funktion & Ästhetik</h3>
                         <p class="text-base">Optimale Verbindung von funktionellen Aspekten der Atemwegsgesundheit mit ästhetischen Ansprüchen moderner Zahnmedizin.</p>
@@ -318,31 +445,36 @@
         </section>
 
         <!-- 5. Vision Section -->
-        <section id="vision" class="py-24 bg-light-blue">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Unsere Vision</h2>
-                <div class="flex justify-center mb-8">
-                    <span class="block w-24 h-1 bg-orange rounded-full"></span>
-                </div>
-                <div class="flex flex-col md:flex-row items-center gap-16">
-                    <div class="md:w-5/12">
-                        <img src="assets/imgs/vis.jpg" alt="Dental Team" class="rounded-lg shadow-xl w-full object-cover">
+        <section id="vision" class="py-24" style="background: #E9E2D0; position: relative;">
+            <!-- Optional: Wave divider at the top -->
+            <div style="position:absolute;top:0;left:0;width:100%;height:60px;overflow:hidden;line-height:0;z-index:1;">
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl p-12">
+                    <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Unsere Vision</h2>
+                    <div class="flex justify-center mb-8">
+                        <span class="block w-24 h-1 bg-orange rounded-full"></span>
                     </div>
-                    <div class="md:w-7/12">
-                        <p class="text-gray-700 leading-relaxed mb-6">Unsere Mission ist es, die Airway-fokussierte Zahnmedizin zu einem integralen Bestandteil der modernen Praxis zu machen. Wir befähigen Zahnärzte, durch ganzheitliche Ansätze die Lebensqualität ihrer Patienten nachhaltig zu verbessern.</p>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-orange text-white rounded-full p-2 mr-4 mt-1"><i data-feather="check"></i></div>
-                                <div>
-                                    <h4 class="font-bold text-navy">Präzision</h4>
-                                    <p class="text-gray-600">Modernste diagnostische Verfahren für exakte Behandlungspläne.</p>
+                    <div class="flex flex-col md:flex-row items-center gap-16">
+                        <div class="md:w-5/12">
+                            <img src="assets/imgs/vis.jpg" alt="Dental Team" class="rounded-lg shadow-xl w-full object-cover">
+                        </div>
+                        <div class="md:w-7/12">
+                            <p class="text-gray-700 leading-relaxed mb-6">Unsere Mission ist es, die Airway-fokussierte Zahnmedizin zu einem integralen Bestandteil der modernen Praxis zu machen. Wir befähigen Zahnärzte, durch ganzheitliche Ansätze die Lebensqualität ihrer Patienten nachhaltig zu verbessern.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-orange text-white rounded-full p-2 mr-4 mt-1"><i data-feather="check"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-navy">Präzision</h4>
+                                        <p class="text-gray-600">Modernste diagnostische Verfahren für exakte Behandlungspläne.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-orange text-white rounded-full p-2 mr-4 mt-1"><i data-feather="check"></i></div>
-                                <div>
-                                    <h4 class="font-bold text-navy">Komfort</h4>
-                                    <p class="text-gray-600">Patientenfreundliche Methoden und eine angenehme Lernatmosphäre.</p>
+                                <div class="flex items-start">
+                                    <div class="bg-orange text-white rounded-full p-2 mr-4 mt-1"><i data-feather="check"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-navy">Komfort</h4>
+                                        <p class="text-gray-600">Patientenfreundliche Methoden und eine angenehme Lernatmosphäre.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -352,7 +484,7 @@
         </section>
 
         <!-- 6. Curriculum & Module Overview -->
-        <section id="curriculum" class="py-24">
+        <section id="curriculum" class="">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Unser Curriculum</h2>
@@ -410,23 +542,22 @@
                 </div>
 
                 <!-- Module Navigation -->
-                <div class="text-center mb-12">
-                    <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Unsere Module 1-5</h2>
+                <div class="text-center  " style="background: linear-gradient(90deg, #1A2947 0%, #4A6B8A 100%); border-radius: 2rem; box-shadow: 0 4px 24px 0 rgba(26,41,71,0.10); padding: 2rem 0;">
+                    <h2 class="text-5xl md:text-5xl font-bold text-white text-center mb-6">Unsere Module 1-5</h2>
                     <div class="flex justify-center mb-8">
                         <span class="block w-24 h-1 bg-orange rounded-full"></span>
                     </div>
-                </div>
-
-                <div class="flex justify-center mb-8 border-b border-gray-200">
-                    <button onclick="showModule(1)" id="tab1" class="px-8 py-4 font-bold text-navy border-b-2 border-orange">Modul 1</button>
-                    <button onclick="showModule(2)" id="tab2" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 2</button>
-                    <button onclick="showModule(3)" id="tab3" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 3</button>
-                    <button onclick="showModule(4)" id="tab4" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 4</button>
-                    <button onclick="showModule(5)" id="tab5" class="px-8 py-4 font-bold text-gray-500 hover:text-navy">Modul 5</button>
+                    <div class="flex justify-center mb-8 border-b border-gray-200" style="border-bottom: none;">
+                        <button onclick="showModule(1)" id="tab1" class="px-8 py-4 font-bold text-gray-500 hover:text-navy bg-transparent text-white active-tab">Modul 1</button>
+                        <button onclick="showModule(2)" id="tab2" class="px-8 py-4 font-bold text-gray-500 hover:text-navy bg-transparent text-white">Modul 2</button>
+                        <button onclick="showModule(3)" id="tab3" class="px-8 py-4 font-bold text-gray-500 hover:text-navy bg-transparent text-white">Modul 3</button>
+                        <button onclick="showModule(4)" id="tab4" class="px-8 py-4 font-bold text-gray-500 hover:text-navy bg-transparent text-white">Modul 4</button>
+                        <button onclick="showModule(5)" id="tab5" class="px-8 py-4 font-bold text-gray-500 hover:text-navy bg-transparent text-white">Modul 5</button>
+                    </div>
                 </div>
 
                 <!-- Module Content -->
-                <div id="module1" class="module-content">
+                <div id="module1" class="module-content" style="background: #F7F6F2; border-radius: 2rem; box-shadow: 0 4px 24px 0 rgba(26,41,71,0.08); padding: 2rem 1rem; margin-bottom:2rem;">
                     <div class="flex flex-col lg:flex-row items-center gap-12">
                         <div class="lg:w-1/2">
                             <h3 class="text-2xl font-bold text-navy mb-6">Einführung in die Airway-Zahnmedizin</h3>
@@ -446,7 +577,7 @@
                     </div>
                 </div>
 
-                <div id="module2" class="module-content hidden">
+                <div id="module2" class="module-content hidden" style="background: #EAF6FD; border-radius: 2rem; box-shadow: 0 4px 24px 0 rgba(26,41,71,0.08); padding: 2rem 1rem; margin-bottom:2rem;">
                     <div class="flex flex-col lg:flex-row items-center gap-12">
                         <div class="lg:w-1/2">
                             <h3 class="text-2xl font-bold text-navy mb-6">Diagnostik mit Weitblick: Airway erkennen & handeln</h3>
@@ -463,12 +594,12 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2">
-                            <img src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?auto=format&fit=crop&w=600&q=80" alt="Airway Diagnostik" class="rounded-lg shadow-xl w-full">
+                            <img src="assets/imgs/m2.webp" alt="Airway Diagnostik" class="rounded-lg shadow-xl w-full">
                         </div>
                     </div>
                 </div>
 
-                <div id="module3" class="module-content hidden">
+                <div id="module3" class="module-content hidden" style="background: #F0FAF6; border-radius: 2rem; box-shadow: 0 4px 24px 0 rgba(26,41,71,0.08); padding: 2rem 1rem; margin-bottom:2rem;">
                     <div class="flex flex-col lg:flex-row items-center gap-12">
                         <div class="lg:w-1/2">
                             <h3 class="text-2xl font-bold text-navy mb-6">Früherkennen, gezielt begleiten: Airway bei Kindern</h3>
@@ -486,12 +617,12 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2">
-                            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Airway bei Kindern" class="rounded-lg shadow-xl w-full">
+                            <img src="assets/imgs/m3.webp" alt="Airway bei Kindern" class="rounded-lg shadow-xl w-full">
                         </div>
                     </div>
                 </div>
 
-                <div id="module4" class="module-content hidden">
+                <div id="module4" class="module-content hidden" style="background: #FDF6F0; border-radius: 2rem; box-shadow: 0 4px 24px 0 rgba(26,41,71,0.08); padding: 2rem 1rem; margin-bottom:2rem;">
                     <div class="flex flex-col lg:flex-row items-center gap-12">
                         <div class="lg:w-1/2">
                             <h3 class="text-2xl font-bold text-navy mb-6">Airway im Netzwerk denken: Schlafmedizin & Teamarbeit</h3>
@@ -507,12 +638,12 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2">
-                            <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=600&q=80" alt="Airway Netzwerk" class="rounded-lg shadow-xl w-full">
+                            <img src="assets/imgs/m4.webp" alt="Airway Netzwerk" class="rounded-lg shadow-xl w-full">
                         </div>
                     </div>
                 </div>
 
-                <div id="module5" class="module-content hidden">
+                <div id="module5" class="module-content hidden" style="background: #F7F6F2; border-radius: 2rem; box-shadow: 0 4px 24px 0 rgba(26,41,71,0.08); padding: 2rem 1rem; margin-bottom:2rem;">
                     <div class="flex flex-col lg:flex-row items-center gap-12">
                         <div class="lg:w-1/2">
                             <h3 class="text-2xl font-bold text-navy mb-6">Airway im Erwachsenenalter: Komplexität behandeln</h3>
@@ -530,7 +661,7 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2">
-                            <img src="https://images.unsplash.com/photo-1512070679279-c2f999098c01?auto=format&fit=crop&w=600&q=80" alt="Airway Erwachsene" class="rounded-lg shadow-xl w-full">
+                            <img src="assets/imgs/m5.webp" alt="Airway Erwachsene" class="rounded-lg shadow-xl w-full">
                         </div>
                     </div>
                 </div>
@@ -547,17 +678,31 @@
                     
                     // Update tab styles
                     document.querySelectorAll('[id^="tab"]').forEach(tab => {
-                        tab.classList.remove('border-b-2', 'border-orange', 'text-navy');
+                        tab.classList.remove('active-tab');
+                        tab.classList.remove('text-navy');
                         tab.classList.add('text-gray-500');
+                        tab.classList.remove('bg-white');
+                        tab.classList.add('bg-transparent');
+                        tab.classList.remove('shadow-md');
+                        tab.classList.add('text-white');
                     });
                     const selectedTab = document.getElementById('tab' + moduleNumber);
+                    selectedTab.classList.add('active-tab');
                     selectedTab.classList.remove('text-gray-500');
-                    selectedTab.classList.add('border-b-2', 'border-orange', 'text-navy');
+                    selectedTab.classList.add('text-navy');
+                    selectedTab.classList.remove('bg-transparent');
+                    selectedTab.classList.add('bg-white');
+                    selectedTab.classList.add('shadow-md');
+                    selectedTab.classList.remove('text-white');
                 }
+                // Set first tab as active on load
+                window.addEventListener('DOMContentLoaded', function() {
+                  showModule(1);
+                });
             </script>
         </section>
           <!-- 7. Speakers Section -->
-        <section class="bg-light-blue py-24">
+        <section class="speaker ">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Die Referenten der Module</h2>
@@ -567,174 +712,43 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center">
                     <!-- Dr. Christian Leonhardt -->
-                    <div class="text-center">
+                    <a href="assets/cv/leonhardt.pdf" target="_blank" class="speaker-card-link text-center p-8">
                         <img src="assets/imgs/leonhardt.jpg" alt="Dr. Christian Leonhardt" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                         <h3 class="text-navy font-bold">Dr. Christian Leonhardt</h3>
-                    </div>
+                    </a>
                     <!-- Dr. Matthias Müller -->
-                    <div class="text-center">
+                    <a href="assets/cv/mueller.pdf" target="_blank" class="speaker-card-link text-center p-8">
                         <img src="assets/imgs/image 5.jpg" alt="Dr. Matthias Müller" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                         <h3 class="text-navy font-bold">Dr. Matthias Müller</h3>
-                    </div>
+                    </a>
                     <!-- Dr. Josef Diemer -->
-                    <div class="text-center">
+                    <a href="assets/cv/diemer.pdf" target="_blank" class="speaker-card-link text-center p-8">
                         <img src="assets/imgs/Josef.jpg" alt="Dr. Josef Diemer" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                         <h3 class="text-navy font-bold">Dr. Josef Diemer</h3>
-                    </div>
+                    </a>
                     <!-- Dr. Steffen Decker -->
-                    <div class="text-center">
+                    <a href="assets/cv/decker.pdf" target="_blank" class="speaker-card-link text-center p-8">
                         <img src="assets/imgs/Steffen.jpg" alt="Dr. Steffen Decker" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                         <h3 class="text-navy font-bold">Dr. Steffen Decker</h3>
-                    </div>
+                    </a>
                     <!-- Schlafmediziner -->
-                    <div class="text-center">
+                    <a href="assets/cv/schlafmediziner.pdf" target="_blank" class="speaker-card-link text-center p-8">
                         <img src="assets/imgs/Schlafmediziner.jpg" alt="Schlafmediziner" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                         <h3 class="text-navy font-bold">Schlafmediziner</h3>
-                  
-                    </div>
+                    </a>
                     <!-- Open Airway Team Hamburg -->
-                    <div class="text-center">
+                    <a href="assets/cv/team_hamburg.pdf" target="_blank" class="speaker-card-link text-center p-8">
                         <img src="assets/imgs/Team.jpg" alt="Open Airway Team Hamburg" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
                         <h3 class="text-navy font-bold">Open Airway Team Hamburg</h3>
-               
-                    </div>
-                </div>
-                </div>
-                
-           
-            
-            </div>
-        </section>
-
-   
-        
-        <!-- Locations Section -->
-        <section class="py-20 bg-light-blue">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-6">Außergewöhnliche Locations</h2>
-                <div class="flex justify-center mb-8">
-                    <span class="block w-24 h-1 bg-orange rounded-full"></span>
-                </div>
-                <p class="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">Unsere Kurse finden in sorgfältig ausgewählten Locations statt, die ein optimales Lernumfeld bieten und gleichzeitig Inspiration und Austausch fördern.</p>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- München - Studio G3 -->
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
-                        <img src="assets/imgs/mun.jpg" alt="München - Studio G3" class="w-full h-72 object-cover">
-                        <div class="p-8 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-navy mb-1">München - Studio G3</h3>
-                            <p class="text-gray-700 mb-2">Gabrielstraße 3, 80636 München</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Zentrale Lage</span>
-                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Moderne Ausstattung</span>
-                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Lichtdurchflutet</span>
-                            </div>
-                            <p class="text-gray-600">Ein modernes Studio im Herzen von München mit hervorragender technischer Ausstattung und einer inspirierenden Atmosphäre für konzentriertes Lernen.</p>
-                        </div>
-                    </div>
-                    <!-- Hamburg - Ginn Hotels -->
-                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
-                        <img src="assets/imgs/hamburg.jpg" alt="Hamburg - Ginn Hotels" class="w-full h-72 object-cover">
-                        <div class="p-8 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-navy mb-1">Hamburg - Ginn Hotels</h3>
-                            <p class="text-gray-700 mb-2">Nordkanalstraße 55, 20097 Hamburg</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Exklusives Ambiente</span>
-                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Erstklassiger Service</span>
-                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Zentrale Lage</span>
-                            </div>
-                            <p class="text-gray-600">Das elegante Ginn Hotel bietet perfekte Räumlichkeiten für unsere Kurse in Hamburg, mit exzellentem Service und einer angenehmen Lernatmosphäre.</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
-
-        <!-- Certification Section -->
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-4">Zertifizierung</h2>
-                <div class="flex justify-center mb-8">
-                    <span class="block w-24 h-1 bg-orange rounded-full"></span>
-                </div>
-            </div>
-            <div class="container mx-auto px-6 py-16">
-                <div class="bg-[#2B4C6F] rounded-3xl p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center">
-                    <!-- Steps as Tabs Left -->
-                    <div class="flex-1 flex flex-col gap-6 w-full max-w-md">
-                        <button class="step-tab bg-white rounded-xl shadow-lg p-6 flex gap-4 items-start transition" data-step="1">
-                            <div class="text-4xl font-extrabold text-[#2B4C6F] leading-none">01</div>
-                            <div class="text-[#2B4C6F] font-semibold text-left">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
-                        </button>
-                        <button class="step-tab border border-white border-opacity-30 rounded-xl p-6 flex gap-4 items-start transition text-left" data-step="2">
-                            <div class="text-4xl font-extrabold text-white leading-none">02</div>
-                            <div class="text-white font-medium">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
-                        </button>
-                        <button class="step-tab border border-white border-opacity-30 rounded-xl p-6 flex gap-4 items-start transition text-left" data-step="3">
-                            <div class="text-4xl font-extrabold text-white leading-none">03</div>
-                            <div class="text-white font-medium">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
-                        </button>
-                        <button class="step-tab border border-white border-opacity-30 rounded-xl p-6 flex gap-4 items-start transition text-left" data-step="4">
-                            <div class="text-4xl font-extrabold text-white leading-none">04</div>
-                            <div class="text-white font-medium">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
-                        </button>
-                    </div>
-                    <!-- Info Panel Right -->
-                    <div class="flex-1 min-w-[300px]">
-                        <div id="step-info-1" class="step-info-block">
-                            <div class="text-2xl font-bold text-white mb-2">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
-                            <p class="text-white text-lg leading-relaxed">Nach Abschluss des gesamten Open Airway Curriculums erhalten Sie ein offizielles Abschlusszertifikat. Dieses Zertifikat bestätigt die Teilnahme an einem strukturierten, wissenschaftlich fundierten und praxisorientierten Weiterbildungsprogramm in der atemwegorientierten Zahnmedizin.<br><br>
-                            Unser Lehrplan mit fünf Modulen ist darauf ausgelegt, Zahnärzten fachübergreifendes Wissen und praktische Fähigkeiten zu vermitteln – von der Beurteilung der Atemwege bis hin zur Diagnoseplanung und Behandlungsdurchführung.<br><br>
-                            Dieses Zertifikat stellt einen bedeutenden Schritt in Ihrer beruflichen Entwicklung dar und bei der Gestaltung einer Zukunft, in der gesunde Atmung, Schlaf und Wachstum Teil der modernen Zahnmedizin sind.</p>
-                        </div>
-                        <div id="step-info-2" class="step-info-block hidden">
-                            <div class="text-2xl font-bold text-white mb-2">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
-                            <p class="text-white text-lg leading-relaxed">Sie lernen, Atemwegsstörungen bei Kindern und Erwachsenen frühzeitig zu erkennen und gezielt zu behandeln. Dies umfasst die Anwendung moderner Diagnosetools und die Umsetzung neuester wissenschaftlicher Erkenntnisse in der Praxis.</p>
-                        </div>
-                        <div id="step-info-3" class="step-info-block hidden">
-                            <div class="text-2xl font-bold text-white mb-2">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
-                            <p class="text-white text-lg leading-relaxed">Sie wenden digitale Diagnosetools und interdisziplinäre Strategien an, um die bestmögliche Versorgung Ihrer Patienten sicherzustellen. Die Integration verschiedener Fachrichtungen fördert innovative Behandlungskonzepte.</p>
-                        </div>
-                        <div id="step-info-4" class="step-info-block hidden">
-                            <div class="text-2xl font-bold text-white mb-2">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
-                            <p class="text-white text-lg leading-relaxed">Sie werden Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen. Der Austausch im Netzwerk unterstützt Ihre kontinuierliche Weiterentwicklung.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script>
-        // Tab functionality for Zertifizierung steps
-        document.querySelectorAll('.step-tab').forEach(btn => {
-          btn.addEventListener('click', function() {
-            document.querySelectorAll('.step-tab').forEach(b => {
-              b.classList.remove('bg-white', 'text-[#2B4C6F]');
-              b.classList.add('border', 'border-white', 'border-opacity-30');
-              b.querySelector('div.text-4xl').classList.remove('text-[#2B4C6F]');
-              b.querySelector('div.text-4xl').classList.add('text-white');
-              b.querySelector('div.font-semibold, div.font-medium').classList.remove('text-[#2B4C6F]');
-              b.querySelector('div.font-semibold, div.font-medium').classList.add('text-white');
-            });
-            this.classList.add('bg-white');
-            this.classList.remove('border', 'border-white', 'border-opacity-30');
-            this.querySelector('div.text-4xl').classList.add('text-[#2B4C6F]');
-            this.querySelector('div.text-4xl').classList.remove('text-white');
-            this.querySelector('div.font-semibold, div.font-medium').classList.add('text-[#2B4C6F]');
-            this.querySelector('div.font-semibold, div.font-medium').classList.remove('text-white');
-            // Show info
-            document.querySelectorAll('.step-info-block').forEach(block => block.classList.add('hidden'));
-            document.getElementById('step-info-' + this.dataset.step).classList.remove('hidden');
-          });
-        });
-        // Set first tab as active on load
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelector('.step-tab[data-step="1"]').click();
-        });
-        </script>
 
         <!-- 11. Registration Section -->
         <section id="anmeldung" class="py-20 bg-white bg-cover bg-center" >
             <div class="container mx-auto px-6">
-                <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-4">Anmeldung</h2>
+                <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-4">Anmeldung Curriculum</h2>
                 <div class="flex justify-center mb-8">
                     <span class="block w-24 h-1 bg-orange rounded-full"></span>
                 </div>
@@ -769,6 +783,8 @@
                 <div class="flex justify-center mb-8">
                     <span class="block w-24 h-1 bg-orange rounded-full"></span>
                 </div>
+                                <p class="text-xl text-navy text-center mb-6 max-w-4xl mx-auto">Werden Sie Teil unseres wachsenden Netzwerks von Spezialisten für airway-orientierte Zahnmedizin in Deutschland und profitieren Sie vom Austausch mit Gleichgesinnten.</p>
+
                 <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start mb-12">
                     <!-- Google Map with 2 pins -->
                     <div class="flex-1 min-w-[320px]">
@@ -834,7 +850,7 @@
                     <img src="assets/imgs/kopf.webp" alt="Köpfe hinter Open Airway" class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-80 z-0">
                     <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full relative z-10">
                         <div class="mb-4">
-                            <span class="inline-block bg-[#E6EEF7] text-[#3C5A7C] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Our Speakers</span>
+                            <!-- <span class="inline-block bg-[#E6EEF7] text-[#3C5A7C] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Our Speakers</span> -->
                         </div>
                         <h2 class="text-3xl font-extrabold text-navy mb-4">Köpfe hinter Open Airway</h2>
                         <p class="text-[#3C5A7C] mb-6">Die Gründer der Open Airway GmbH vereinen klinische Expertise, strategische Vision und das gemeinsame Engagement, die moderne, atemwegsorientierte Zahnmedizin neu zu definieren.</p>
