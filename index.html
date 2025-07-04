@@ -22,23 +22,26 @@
             font-family: 'Ubuntu', sans-serif;
             color: #2B4C6F;
         }
+        .header-bg {
+            background-color: #ffffffed; 
+        }
         .bg-navy { background-color: #2B4C6F; }
         .text-navy { color: #2B4C6F; }
         .border-navy { border-color: #2B4C6F; }
-        .bg-orange { background-color: #F36F21; }
-        .text-orange { color: #F36F21; }
+        .bg-orange { background-color: #64B2E4 }
+        .text-orange { color: #64B2E4 }
         .bg-light-blue { background-color: #F4F8FB; }
         .hover-shadow-orange:hover {
             box-shadow: 0 10px 15px -3px rgba(243, 111, 33, 0.1), 0 4px 6px -2px rgba(243, 111, 33, 0.05);
-            border-color: #F36F21;
+            border-color: #64B2E4
         }
-        .hover\\:bg-orange:hover { background-color: #F36F21 !important; }
+        .hover\\:bg-orange:hover { background-color: #64B2E4 !important; }
         .scroll-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none; /* For Firefox */
         }
-             .hover\\:bg-orange:hover { background-color: #F36F21 !important; }
+             .hover\\:bg-orange:hover { background-color: #64B2E4 !important; }
         .scroll-container::-webkit-scrollbar {
             display: none; /* For Chrome, Safari, and Opera */
         }
@@ -89,7 +92,7 @@
             background:  #4A6B8A  ;
         }
         .curriculum-gradient-orange {
-            background:  #F36F21;
+            background:  #64B2E4
         }
         .curriculum-gradient-green {
             background: #52b68e ;
@@ -166,8 +169,8 @@
             filter: brightness(0) invert(1);
         }
         .nav-link.active, .nav-link.active:focus {
-            color: #F36F21 !important;
-            border-bottom: 2px solid #F36F21;
+            color: #64B2E4 !important;
+            border-bottom: 2px solid #64B2E4
         }
         .card-transition:hover svg {
     filter: brightness(0) invert(1);
@@ -289,7 +292,7 @@
 <body class="bg-white">
 
     <!-- 1. Header -->
-    <header id="home" class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+    <header id="home" class="shadow-sm fixed top-0 left-0 right-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-3xl font-bold text-navy"> <img src="assets/imgs/logo1_openairway_4c.png" alt="OpenAirway Logo" class="h-12 w-auto" alt=""></a>
             <div class="hidden lg:flex items-center space-x-8" id="main-nav">
@@ -550,7 +553,7 @@ Fundiertes Wissen, das zum Umdenken anregt.
                     <!-- Kompetenzen Card -->
                     <div class="curriculum-card curriculum-gradient-orange flex flex-col h-full">
                         <div class="curriculum-icon-circle mx-auto">
-                            <i data-feather="tool" class="w-10 h-10" style="color:#F36F21;"></i>
+                            <i data-feather="tool" class="w-10 h-10" style="color:#64B2E4"></i>
                         </div>
                         <div class="curriculum-title">Kompetenz, die weiterträgt</div>
                      <p class="text-white" >
@@ -741,7 +744,7 @@ Fundiertes Wissen, das zum Umdenken anregt.
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center">
                     <!-- Dr. Christian Leonhardt -->
-                    <a href="assets/cv/leonhardt.pdf" target="_blank" class="speaker-card-link text-center p-8">
+                    <a href="assets/cv/leonhardt.pdf" target="_blank" class="speaker-card-link text-center p-8 rounded-full">
                         <img src="assets/imgs/leonhardt.jpg" alt="Dr. Christian Leonhardt" class="w-32 h-32  mx-auto mb-4 object-cover  rounded-full">
                         <h3 class="text-navy font-bold">Dr. Christian Leonhardt</h3>
                     </a>
@@ -825,86 +828,144 @@ Fundiertes Wissen, das zum Umdenken anregt.
         </section>
 
         <!-- Certification Section -->
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-5xl md:text-5xl font-bold text-navy text-center mb-4">Zertifizierung</h2>
+        <section class="py-20 relative bg-navy" style="background: linear-gradient(135deg, #2B4C6F 0%, #3C5A7C 100%);">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('assets/imgs/hero1.png');"></div>
+            <div class="relative container mx-auto px-6 z-10">
+                <h2 class="text-5xl md:text-5xl font-bold text-white text-center mb-4">Zertifizierung</h2>
                 <div class="flex justify-center mb-8">
-                    <span class="block w-24 h-1 bg-orange "></span>
+                    <span class="block w-24 h-1 bg-orange"></span>
                 </div>
-            </div>
-            <div class="container mx-auto px-6 py-16">
-                <div class="bg-[#2B4C6F]  p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center">
-                    <!-- Steps as Tabs Left -->
-                    <div class="flex-1 flex flex-col gap-6 w-full max-w-md">
-                        <button class="step-tab bg-white  shadow-lg p-6 flex gap-4 items-start transition" data-step="1">
-                            <div class="text-4xl font-extrabold text-[#2B4C6F] leading-none">01</div>
-                            <div class="text-[#2B4C6F] font-semibold text-left">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
-                        </button>
-                        <button class="step-tab border border-white border-opacity-30  p-6 flex gap-4 items-start transition text-left" data-step="2">
-                            <div class="text-4xl font-extrabold text-white leading-none">02</div>
-                            <div class="text-white font-medium">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
-                        </button>
-                        <button class="step-tab border border-white border-opacity-30  p-6 flex gap-4 items-start transition text-left" data-step="3">
-                            <div class="text-4xl font-extrabold text-white leading-none">03</div>
-                            <div class="text-white font-medium">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
-                        </button>
-                        <button class="step-tab border border-white border-opacity-30  p-6 flex gap-4 items-start transition text-left" data-step="4">
-                            <div class="text-4xl font-extrabold text-white leading-none">04</div>
-                            <div class="text-white font-medium">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
-                        </button>
+                <div class="max-w-3xl mx-auto text-center mb-10">
+                    <p class="text-2xl md:text-3xl font-bold text-white mb-2">Werden Sie Spezialist:in für interdisziplinäre Airway-Therapie.</p>
+                    <p class="text-white text-lg mb-2">Mit dem Abschluss des Curriculums erhalten Sie die Qualifikation zur*zum Spezialist:in für interdisziplinäre Airway-Therapie.</p>
+                    <p class="text-white text-lg">In den fünf klar aufgebauten Modulen erwerben Sie fachübergreifendes Wissen und praxisrelevante Fähigkeiten, von der funktionellen Beurteilung der Atemwege bis zur interdisziplinären Therapieplanung und Umsetzung.</p>
+                </div>
+                
+                <!-- New Steps Layout based on the image -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
+                        <div class="text-4xl font-extrabold text-navy mb-2">01</div>
+                        <div class="font-semibold text-navy text-sm leading-tight">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
                     </div>
-                    <!-- Info Panel Right -->
-                    <div class="flex-1 min-w-[300px]">
-                        <div id="step-info-1" class="step-info-block">
-                            <div class="text-2xl font-bold text-white mb-2">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
-                            <p class="text-white text-lg leading-relaxed">Nach Abschluss des gesamten Open Airway Curriculums erhalten Sie ein offizielles Abschlusszertifikat. Dieses Zertifikat bestätigt die Teilnahme an einem strukturierten, wissenschaftlich fundierten und praxisorientierten Weiterbildungsprogramm in der atemwegorientierten Zahnmedizin.<br><br>
-                            Unser Lehrplan mit fünf Modulen ist darauf ausgelegt, Zahnärzten fachübergreifendes Wissen und praktische Fähigkeiten zu vermitteln – von der Beurteilung der Atemwege bis hin zur Diagnoseplanung und Behandlungsdurchführung.<br><br>
-                            Dieses Zertifikat stellt einen bedeutenden Schritt in Ihrer beruflichen Entwicklung dar und bei der Gestaltung einer Zukunft, in der gesunde Atmung, Schlaf und Wachstum Teil der modernen Zahnmedizin sind.</p>
-                        </div>
-                        <div id="step-info-2" class="step-info-block hidden">
-                            <div class="text-2xl font-bold text-white mb-2">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
-                            <p class="text-white text-lg leading-relaxed">Sie lernen, Atemwegsstörungen bei Kindern und Erwachsenen frühzeitig zu erkennen und gezielt zu behandeln. Dies umfasst die Anwendung moderner Diagnosetools und die Umsetzung neuester wissenschaftlicher Erkenntnisse in der Praxis.</p>
-                        </div>
-                        <div id="step-info-3" class="step-info-block hidden">
-                            <div class="text-2xl font-bold text-white mb-2">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
-                            <p class="text-white text-lg leading-relaxed">Sie wenden digitale Diagnosetools und interdisziplinäre Strategien an, um die bestmögliche Versorgung Ihrer Patienten sicherzustellen. Die Integration verschiedener Fachrichtungen fördert innovative Behandlungskonzepte.</p>
-                        </div>
-                        <div id="step-info-4" class="step-info-block hidden">
-                            <div class="text-2xl font-bold text-white mb-2">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
-                            <p class="text-white text-lg leading-relaxed">Sie werden Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen. Der Austausch im Netzwerk unterstützt Ihre kontinuierliche Weiterentwicklung.</p>
-                        </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
+                        <div class="text-4xl font-extrabold text-navy mb-2">02</div>
+                        <div class="font-semibold text-navy text-sm leading-tight">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
                     </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
+                        <div class="text-4xl font-extrabold text-navy mb-2">03</div>
+                        <div class="font-semibold text-navy text-sm leading-tight">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
+                        <div class="text-4xl font-extrabold text-navy mb-2">04</div>
+                        <div class="font-semibold text-navy text-sm leading-tight">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
+                    </div>
+                </div>
+                
+                <!-- Small text below step 3 -->
+                <div class="text-center mt-10 text-white text-xs max-w-md mx-auto">
+                    <p>Landing Page für Spezialist für Konzeption, Organisation und Durchführung von Fort- und Weiterbildungsmaßnahmen im Bereich der Zahnmedizin</p>
                 </div>
             </div>
         </section>
-        <script>
-        // Tab functionality for Zertifizierung steps
-        document.querySelectorAll('.step-tab').forEach(btn => {
-          btn.addEventListener('click', function() {
-            document.querySelectorAll('.step-tab').forEach(b => {
-              b.classList.remove('bg-white', 'text-[#2B4C6F]');
-              b.classList.add('border', 'border-white', 'border-opacity-30');
-              b.querySelector('div.text-4xl').classList.remove('text-[#2B4C6F]');
-              b.querySelector('div.text-4xl').classList.add('text-white');
-              b.querySelector('div.font-semibold, div.font-medium').classList.remove('text-[#2B4C6F]');
-              b.querySelector('div.font-semibold, div.font-medium').classList.add('text-white');
-            });
-            this.classList.add('bg-white');
-            this.classList.remove('border', 'border-white', 'border-opacity-30');
-            this.querySelector('div.text-4xl').classList.add('text-[#2B4C6F]');
-            this.querySelector('div.text-4xl').classList.remove('text-white');
-            this.querySelector('div.font-semibold, div.font-medium').classList.add('text-[#2B4C6F]');
-            this.querySelector('div.font-semibold, div.font-medium').classList.remove('text-white');
-            // Show info
-            document.querySelectorAll('.step-info-block').forEach(block => block.classList.add('hidden'));
-            document.getElementById('step-info-' + this.dataset.step).classList.remove('hidden');
-          });
-        });
-        // Set first tab as active on load
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelector('.step-tab[data-step="1"]').click();
-        });
-        </script>
+
+           <!-- Section Container -->
+    <section class="relative w-full py-20 lg:py-32 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1579684453423-f84349362153?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                 alt="Dental professional at work" 
+                 class="w-full h-full object-cover"
+                 onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/020617/334155?text=Background+Image';">
+            <!-- Dark Blue Overlay -->
+            <div class="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/50 to-transparent"></div>
+        </div>
+
+        <!-- SVG Arrows for Desktop View -->
+        <!-- These are positioned absolutely to connect the grid items in sequence -->
+        <!-- Arrow 1 -> 2 (Top-left to Bottom-left) -->
+        <svg width="150" height="200" class="hidden lg:block absolute z-10 svg-arrow" style="top: 22%; left: 49%; transform: translateX(-160px) translateY(30px);">
+            <path d="M130 10 C 30 50, 30 150, 130 190" />
+        </svg>
+        <!-- Arrow 2 -> 3 (Bottom-left to Top-right) -->
+        <svg width="200" height="300" class="hidden lg:block absolute z-10 svg-arrow" style="top: 40%; left: 50%; transform: translateX(-100px);">
+            <path d="M10 290 C 150 250, 150 50, 10 10" />
+        </svg>
+        <!-- Arrow 3 -> 4 (Top-right to Bottom-right) -->
+        <svg width="150" height="200" class="hidden lg:block absolute z-10 svg-arrow" style="top: 22%; right: 49%; transform: translateX(160px) translateY(30px);">
+            <path d="M20 10 C 120 50, 120 150, 20 190" />
+        </svg>
+
+        <!-- Content Grid -->
+        <div class="relative z-20 container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16 lg:gap-y-28">
+
+                <!-- Item 01 -->
+                <div class="group">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">01</div>
+                        <div class="mt-2 flex-1">
+                            <div class="bg-white rounded-2xl p-6 shadow-2xl transition-all duration-300 ease-in-out">
+                                <p class="text-lg font-bold text-slate-800 transition-all duration-300 ease-in-out">
+                                    Zeigen Sie Fachwissen in der atemwegsorientierten Zahnmedizin
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 03 -->
+                <div class="group">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">03</div>
+                        <div class="mt-2 flex-1">
+                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
+                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
+                                    Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 02 -->
+                <div class="group">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">02</div>
+                        <div class="mt-2 flex-1">
+                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
+                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
+                                    In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 04 -->
+                <div class="group">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">04</div>
+                        <div class="mt-2 flex-1">
+                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
+                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
+                                    Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
         <!-- 11. Registration Section -->
         <section id="anmeldung" class="py-20 bg-white bg-cover bg-center" >
@@ -1121,69 +1182,25 @@ Als Mitgründerin bringt Kathrin Falk nicht nur strategisches Denken und ausgepr
     </footer>
 
     <script>
-        // Feather Icons
+        // Initialize Feather Icons
         feather.replace();
-
-        // Mobile Menu
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = menuBtn.querySelector('svg');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            // Change icon to 'x' when menu is open
-            if (mobileMenu.classList.contains('hidden')) {
-                menuBtn.innerHTML = '<i data-feather="menu"></i>';
-            } else {
-                menuBtn.innerHTML = '<i data-feather="x"></i>';
-            }
-            feather.replace(); // Re-run feather to render the new icon
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileLinks = mobileMenu.getElementsByTagName('a');
-        for(let link of mobileLinks) {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuBtn.innerHTML = '<i data-feather="menu"></i>';
-                feather.replace();
-            });
-        }
     </script>
     <script>
-    // Highlight nav item based on scroll position
-    document.addEventListener('DOMContentLoaded', function() {
-      const sections = [
-        {id: 'hero'},
-        {id: 'ueber-uns'},
-        {id: 'vision'},
-        {id: 'curriculum'},
-        {id: 'anmeldung'},
-        {id: 'netzwerk'},
-        {id: 'kontakt'}
-      ];
-      const navLinks = document.querySelectorAll('.nav-link');
-      function onScroll() {
-        let scrollPos = window.scrollY + 120;
-        let current = 'hero';
-        for (const section of sections) {
-          const el = document.getElementById(section.id);
-          if (el && el.offsetTop <= scrollPos) {
-            current = section.id;
-          }
-        }
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-          }
-        });
+  // Toggle header-bg class on scroll up or down
+  let lastScroll = window.pageYOffset;
+  const header = document.getElementById('home');
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      header.classList.remove('header-bg');
+    } else {
+      // whenever the user scrolls at all, add header-bg
+      if (currentScroll !== lastScroll) {
+        header.classList.add('header-bg');
       }
-      window.addEventListener('scroll', onScroll);
-      onScroll();
-    });
-    </script>
-</body>
-</html>
-
-
+    }
+    lastScroll = currentScroll;
+  });
+</script>
+    </body>
+    </html>
