@@ -1,120 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atemwegsorientierte Zahnmedizin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom styles for the dashed SVG arrows */
-        .svg-arrow {
-            stroke-dasharray: 8, 8; /* Creates the dashed effect */
-            stroke-width: 2;
-            fill: none;
-            stroke: white;
-            opacity: 0.6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4-Step Section</title>
+  <style>
+    /* ========== SECTION WRAPPER ========== */
+    .steps {
+      background: #2B4C6F;
+      color: #fff;
+      padding: 4rem 1rem;
+    }
+    .steps .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      gap: 2rem;
+    }
+
+    /* ========== STEP BOXES ========== */
+    .step {
+      position: relative;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    /* Step 1: filled white background with navy text */
+    .step-1 {
+      grid-area: 1 / 1;
+      background: #fff;
+      color: #2B4C6F;
+    }
+    /* Steps 2, 3, 4: transparent with subtle white border */
+    .step-2 { grid-area: 2 / 1; }
+    .step-3 { grid-area: 1 / 2; }
+    .step-4 { grid-area: 2 / 2; }
+
+    .step-2,
+    .step-3,
+    .step-4 {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.6);
+      color: #fff;
+    }
+
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .step-text {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ========== RESPONSIVE LAYOUT ========== */
+    @media (max-width: 768px) {
+      .steps .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+      }
+      .step-1, .step-2, .step-3, .step-4 {
+        grid-area: auto;
+      }
+    }
+
+    /* ========== ARROW STYLES ========== */
+    .arrow {
+      position: absolute;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-dasharray: 4 4;
+      marker-end: url(#arrowhead);
+      z-index: 0;
+    }
+    /* Arrow from Step 1 → Step 2 */
+    .arrow-1 {
+      top: calc( (100% / 2) * 0.8 );
+      left: 10%;
+      width: 120px;
+      height: 80px;
+      transform: rotate(90deg);
+    }
+    /* Arrow from Step 2 → Step 3 */
+    .arrow-2 {
+      top: 55%;
+      left: 40%;
+      width: 200px;
+      height: 120px;
+    }
+    /* Arrow from Step 3 → Step 4 */
+    .arrow-3 {
+      top: 30%;
+      left: 75%;
+      width: 120px;
+      height: 80px;
+      transform: rotate(90deg) scaleX(-1);
+    }
+  </style>
 </head>
-<body class="bg-gray-900">
-
-    <!-- Section Container -->
-    <section class="relative w-full py-20 lg:py-32 overflow-hidden">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1579684453423-f84349362153?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                 alt="Dental professional at work" 
-                 class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/020617/334155?text=Background+Image';">
-            <!-- Dark Blue Overlay -->
-            <div class="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/50 to-transparent"></div>
+<body>
+  <section class="steps">
+    <div class="container">
+      <!-- STEP 1 -->
+      <div class="step step-1">
+        <div class="step-number">01</div>
+        <div class="step-text">
+          Zeigen Sie Fachwissen in der atemwegsorientierten Zahnmedizin
         </div>
-
-        <!-- SVG Arrows for Desktop View -->
-        <!-- These are positioned absolutely to connect the grid items in sequence -->
-        <!-- Arrow 1 -> 2 (Top-left to Bottom-left) -->
-        <svg width="150" height="200" class="hidden lg:block absolute z-10 svg-arrow" style="top: 22%; left: 49%; transform: translateX(-160px) translateY(30px);">
-            <path d="M130 10 C 30 50, 30 150, 130 190" />
-        </svg>
-        <!-- Arrow 2 -> 3 (Bottom-left to Top-right) -->
-        <svg width="200" height="300" class="hidden lg:block absolute z-10 svg-arrow" style="top: 40%; left: 50%; transform: translateX(-100px);">
-            <path d="M10 290 C 150 250, 150 50, 10 10" />
-        </svg>
-        <!-- Arrow 3 -> 4 (Top-right to Bottom-right) -->
-        <svg width="150" height="200" class="hidden lg:block absolute z-10 svg-arrow" style="top: 22%; right: 49%; transform: translateX(160px) translateY(30px);">
-            <path d="M20 10 C 120 50, 120 150, 20 190" />
-        </svg>
-
-        <!-- Content Grid -->
-        <div class="relative z-20 container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16 lg:gap-y-28">
-
-                <!-- Item 01 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">01</div>
-                        <div class="mt-2 flex-1">
-                            <div class="bg-white rounded-2xl p-6 shadow-2xl transition-all duration-300 ease-in-out">
-                                <p class="text-lg font-bold text-slate-800 transition-all duration-300 ease-in-out">
-                                    Zeigen Sie Fachwissen in der atemwegsorientierten Zahnmedizin
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 03 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">03</div>
-                        <div class="mt-2 flex-1">
-                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
-                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
-                                    Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 02 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">02</div>
-                        <div class="mt-2 flex-1">
-                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
-                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
-                                    In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 04 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">04</div>
-                        <div class="mt-2 flex-1">
-                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
-                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
-                                    Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="step step-2">
+        <div class="step-number">02</div>
+        <div class="step-text">
+          In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln
         </div>
-    </section>
+      </div>
+      <!-- STEP 3 -->
+      <div class="step step-3">
+        <div class="step-number">03</div>
+        <div class="step-text">
+          Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an
+        </div>
+      </div>
+      <!-- STEP 4 -->
+      <div class="step step-4">
+        <div class="step-number">04</div>
+        <div class="step-text">
+          Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute...
+        </div>
+      </div>
 
+      
+      <!-- ARROW DEFINITIONS -->
+      <svg style="position:absolute; width:0; height:0;">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#fff"/>
+          </marker>
+        </defs>
+      </svg>
+
+      <!-- ARROW 1 (01 → 02) -->
+      <svg class="arrow arrow-1" viewBox="0 0 20 20">
+        <path d="M0,0 C0,10 20,10 20,20"/>
+      </svg>
+      <!-- ARROW 2 (02 → 03) -->
+      <svg class="arrow arrow-2" viewBox="0 0 200 120">
+        <path d="M0,120 L100,120 L100,0"/>
+      </svg>
+      <!-- ARROW 3 (03 → 04) -->
+      <svg class="arrow arrow-3" viewBox="0 0 20 20">
+        <path d="M0,0 C0,10 20,10 20,20"/>
+      </svg>
+      <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved dotted path -->
+  <path d="M10,140 C60,40 140,40 190,10" 
+        stroke="#FFFFFF" 
+        stroke-width="2" 
+        stroke-dasharray="4,6" 
+        fill="none"/>
+  
+  <!-- Arrowhead at the end of the path -->
+  <polygon points="190,10 182,15 184,7" 
+           fill="#FFFFFF"/>
+</svg>
+
+    </div>
+  </section>
 </body>
 </html>

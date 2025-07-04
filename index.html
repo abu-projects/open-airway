@@ -25,6 +25,21 @@
         .header-bg {
             background-color: #ffffffed; 
         }
+        .zer-box{
+                background-color: #35577c8f;
+    border: 1px solid #64b2e4;
+        }
+        .zer-box:hover{
+                background-color: #ffffff;
+
+        }
+        .zer-box div{
+            color: #fff;
+        }
+          .zer-box:hover div{
+                color: var(--text-navy);
+
+        }
         .bg-navy { background-color: #2B4C6F; }
         .text-navy { color: #2B4C6F; }
         .border-navy { border-color: #2B4C6F; }
@@ -272,12 +287,164 @@
     .active-tab {
       background: #fff !important;
       color: #1A2947 !important;
-      border-bottom: 2px solid #F28B30 !important;
+      border-bottom: 2px solid #64B2E4 !important;
       box-shadow: 0 2px 8px 0 rgba(26,41,71,0.10);
       z-index: 2;
     }
     .module-btns button{
         font-size: 20px;
+    }
+    .zer{
+           .process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 60px;
+            position: relative;
+        }
+
+        .process-card {
+            background: #ffffff30;
+          
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+             .process-card  svg{
+                position: absolute;
+             }
+                .process-card  .svg-01{
+    transform: scaleY(-1);
+             }
+                  .process-card  .svg-03{
+    transform: scale(-1);
+    right: 20px;
+             }
+                .process-card  .svg-02{
+                  top: -122px;
+        right: -114px;
+
+        
+             }
+         .process-card:hover{
+            background: #ffffffce;
+      
+        }
+
+        .process-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .process-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .card-01 {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .card-02 {
+            grid-column: 1;
+            grid-row: 2;
+            margin-top: 40px;
+        }
+
+        .card-03 {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .card-04 {
+            grid-column: 2;
+            grid-row: 2;
+            margin-top: 40px;
+        }
+
+        .card-04 .process-title {
+            font-size: 14px;
+        }
+
+        /* Curved arrows */
+        .arrow {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .arrow-1 {
+            top: 100px;
+            left: 50%;
+            width: 150px;
+            height: 60px;
+            transform: translateX(-50%);
+        }
+
+        .arrow-2 {
+            top: 100px;
+            left: 75%;
+            width: 60px;
+            height: 150px;
+            transform: translateX(-50%);
+        }
+
+        .arrow-3 {
+            top: 360px;
+            left: 50%;
+            width: 300px;
+            height: 120px;
+            transform: translateX(-50%);
+        }
+
+        .arrow svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            opacity: 0.7;
+        }
+
+        .arrow-head {
+            fill: #ffffff;
+            stroke: #ffffff;
+            stroke-width: 1;
+        }
+
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .card-01, .card-02, .card-03, .card-04 {
+                grid-column: 1;
+                margin-top: 0;
+            }
+            
+            .card-02 { grid-row: 2; }
+            .card-03 { grid-row: 3; }
+            .card-04 { grid-row: 4; }
+            
+            .arrow { display: none; }
+              .process-card svg{
+            display: none;
+        }
+        }
+      
+ .nav-link.active, .nav-link.active:focus {
+            color: #64B2E4 !important;
+            border-bottom: 2px solid #64B2E4
+        }
     }
     </style>
     <style>
@@ -287,7 +454,18 @@
 #modal-overlay.flex { display: flex; }
 .animate-fade-in { animation: fadeIn 0.2s; }
 @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
-</style>
+        .process-card svg path {
+            stroke-dasharray: 4, 6;
+            stroke-dashoffset: 0;
+            animation: dash-move 2s linear infinite;
+        }
+        @keyframes dash-move {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+        
+    </style>
 </head>
 <body class="bg-white">
 
@@ -829,7 +1007,7 @@ Fundiertes Wissen, das zum Umdenken anregt.
 
         <!-- Certification Section -->
         <section class="py-20 relative bg-navy" style="background: linear-gradient(135deg, #2B4C6F 0%, #3C5A7C 100%);">
-            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('assets/imgs/hero1.png');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('assets/imgs/m2.webp');"></div>
             <div class="relative container mx-auto px-6 z-10">
                 <h2 class="text-5xl md:text-5xl font-bold text-white text-center mb-4">Zertifizierung</h2>
                 <div class="flex justify-center mb-8">
@@ -840,132 +1018,73 @@ Fundiertes Wissen, das zum Umdenken anregt.
                     <p class="text-white text-lg mb-2">Mit dem Abschluss des Curriculums erhalten Sie die Qualifikation zur*zum Spezialist:in für interdisziplinäre Airway-Therapie.</p>
                     <p class="text-white text-lg">In den fünf klar aufgebauten Modulen erwerben Sie fachübergreifendes Wissen und praxisrelevante Fähigkeiten, von der funktionellen Beurteilung der Atemwege bis zur interdisziplinären Therapieplanung und Umsetzung.</p>
                 </div>
-                
-                <!-- New Steps Layout based on the image -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-                    <!-- Step 1 -->
-                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
-                        <div class="text-4xl font-extrabold text-navy mb-2">01</div>
-                        <div class="font-semibold text-navy text-sm leading-tight">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
-                        <div class="text-4xl font-extrabold text-navy mb-2">02</div>
-                        <div class="font-semibold text-navy text-sm leading-tight">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
-                        <div class="text-4xl font-extrabold text-navy mb-2">03</div>
-                        <div class="font-semibold text-navy text-sm leading-tight">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
-                    </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="bg-white rounded-lg shadow-lg p-5 relative">
-                        <div class="text-4xl font-extrabold text-navy mb-2">04</div>
-                        <div class="font-semibold text-navy text-sm leading-tight">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
+                <!-- New Steps Layout based on the image and new order -->
+                <div class="zer">
+                    <div class="process-grid max-w-5xl mx-auto">
+                        <!-- Step 1 -->
+                        <div class="zer-box process-card card-01">
+                            <div class="process-number">01</div>
+                            <div class="process-title">Zeigen Sie Fachwissen in der atemwegorientierten Zahnmedizin</div>
+                       
+                             <svg class="svg-01" width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved dotted path -->
+  <path d="M10,140 C60,40 140,40 190,10" 
+        stroke="#FFFFFF" 
+        stroke-width="2" 
+        stroke-dasharray="4,6" 
+        fill="none"/>
+  
+  <!-- Arrowhead at the end of the path -->
+  <polygon points="190,10 182,15 184,7" 
+           fill="#FFFFFF"/>
+</svg>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="zer-box process-card card-03">
+                            <div class="process-number">03</div>
+                            <div class="process-title">Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an</div>
+                                                <svg class="svg-03" width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved dotted path -->
+  <path d="M10,140 C60,40 140,40 190,10" 
+        stroke="#FFFFFF" 
+        stroke-width="2" 
+        stroke-dasharray="4,6" 
+        fill="none"/>
+  
+  <!-- Arrowhead at the end of the path -->
+  <polygon points="190,10 182,15 184,7" 
+           fill="#FFFFFF"/>
+</svg>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="zer-box process-card card-02">
+                            <div class="process-number">02</div>
+                            <div class="process-title">In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln</div>
+                      
+                                               <svg class="svg-02" width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curved dotted path -->
+  <path d="M10,140 C60,40 140,40 190,10" 
+        stroke="#FFFFFF" 
+        stroke-width="2" 
+        stroke-dasharray="4,6" 
+        fill="none"/>
+  
+  <!-- Arrowhead at the end of the path -->
+  <polygon points="190,10 182,15 184,7" 
+           fill="#FFFFFF"/>
+</svg>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="zer-box process-card card-04">
+                            <div class="process-number">04</div>
+                            <div class="process-title">Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen</div>
+                        </div>
+                        <!-- Arrows can be added here if needed, using the .arrow classes -->
                     </div>
                 </div>
-                
-                <!-- Small text below step 3 -->
-                <div class="text-center mt-10 text-white text-xs max-w-md mx-auto">
-                    <p>Landing Page für Spezialist für Konzeption, Organisation und Durchführung von Fort- und Weiterbildungsmaßnahmen im Bereich der Zahnmedizin</p>
-                </div>
+            
             </div>
         </section>
-
-           <!-- Section Container -->
-    <section class="relative w-full py-20 lg:py-32 overflow-hidden">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1579684453423-f84349362153?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                 alt="Dental professional at work" 
-                 class="w-full h-full object-cover"
-                 onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/020617/334155?text=Background+Image';">
-            <!-- Dark Blue Overlay -->
-            <div class="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/50 to-transparent"></div>
-        </div>
-
-        <!-- SVG Arrows for Desktop View -->
-        <!-- These are positioned absolutely to connect the grid items in sequence -->
-        <!-- Arrow 1 -> 2 (Top-left to Bottom-left) -->
-        <svg width="150" height="200" class="hidden lg:block absolute z-10 svg-arrow" style="top: 22%; left: 49%; transform: translateX(-160px) translateY(30px);">
-            <path d="M130 10 C 30 50, 30 150, 130 190" />
-        </svg>
-        <!-- Arrow 2 -> 3 (Bottom-left to Top-right) -->
-        <svg width="200" height="300" class="hidden lg:block absolute z-10 svg-arrow" style="top: 40%; left: 50%; transform: translateX(-100px);">
-            <path d="M10 290 C 150 250, 150 50, 10 10" />
-        </svg>
-        <!-- Arrow 3 -> 4 (Top-right to Bottom-right) -->
-        <svg width="150" height="200" class="hidden lg:block absolute z-10 svg-arrow" style="top: 22%; right: 49%; transform: translateX(160px) translateY(30px);">
-            <path d="M20 10 C 120 50, 120 150, 20 190" />
-        </svg>
-
-        <!-- Content Grid -->
-        <div class="relative z-20 container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16 lg:gap-y-28">
-
-                <!-- Item 01 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">01</div>
-                        <div class="mt-2 flex-1">
-                            <div class="bg-white rounded-2xl p-6 shadow-2xl transition-all duration-300 ease-in-out">
-                                <p class="text-lg font-bold text-slate-800 transition-all duration-300 ease-in-out">
-                                    Zeigen Sie Fachwissen in der atemwegsorientierten Zahnmedizin
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 03 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">03</div>
-                        <div class="mt-2 flex-1">
-                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
-                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
-                                    Wenden Sie digitale Diagnosetools und interdisziplinäre Strategien in Ihrer täglichen Praxis an
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 02 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">02</div>
-                        <div class="mt-2 flex-1">
-                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
-                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
-                                    In der Lage sein, Atemwegsstörungen bei Kindern und Erwachsenen zu erkennen und zu behandeln
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 04 -->
-                <div class="group">
-                    <div class="flex gap-6 items-start">
-                        <div class="text-7xl font-black text-white/80" style="font-weight: 900;">04</div>
-                        <div class="mt-2 flex-1">
-                            <div class="rounded-2xl p-6 transition-all duration-300 ease-in-out group-hover:bg-white group-hover:shadow-2xl">
-                                <p class="text-lg font-semibold text-white transition-all duration-300 ease-in-out group-hover:text-slate-800 group-hover:font-bold">
-                                    Werden Sie Teil eines wachsenden Netzwerks zertifizierter Fachleute, die sich der funktionellen, vorbeugenden Zahnpflege widmen
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
         <!-- 11. Registration Section -->
         <section id="anmeldung" class="py-20 bg-white bg-cover bg-center" >
@@ -1020,7 +1139,7 @@ Fundiertes Wissen, das zum Umdenken anregt.
                         <h3 class="text-2xl font-bold text-[#3C5A7C] mb-4">Lokale Standorte</h3>
                         <p class="mb-6 text-[#3C5A7C]">Aktuell sind wir in Hamburg und Dachau (bei München) vertreten. Unser Netzwerk wächst stetig, um airway-orientierte Zahnmedizin in ganz Deutschland zugänglich zu machen.</p>
                         <div class="mb-4 flex items-start gap-3">
-                            <span class="inline-flex items-center justify-center w-8 h-8  bg-[#E6EEF7] text-[#3C5A7C]">
+                            <span class="rounded-full inline-flex items-center justify-center w-8 h-8  bg-[#E6EEF7] text-[#3C5A7C]">
                                 <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="#3C5A7C" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="3" fill="#3C5A7C"/></svg>
                             </span>
                             <div>
@@ -1030,7 +1149,7 @@ Praxis Dr. Müller I Dr. Bethge, Johannisbollwerk 19, 20459 Hamburg </span>
                             </div>
                         </div>
                         <div class="mb-4 flex items-start gap-3">
-                            <span class="inline-flex items-center justify-center w-8 h-8  bg-[#E6EEF7] text-[#3C5A7C]">
+                            <span class="rounded-full inline-flex items-center justify-center w-8 h-8  bg-[#E6EEF7] text-[#3C5A7C]">
                                 <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="#3C5A7C" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="3" fill="#3C5A7C"/></svg>
                             </span>
                             <div>
@@ -1044,21 +1163,21 @@ Kompetenzteam für Zahnheilkunde,  Dr. Bader Schleißheimer Straße 12, 85221 Da
                 <h3 class="text-2xl font-bold text-[#3C5A7C] mb-8 text-center">Werden Sie Teil des Netzwerks</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                     <div class="bg-white  shadow p-6 flex flex-col items-center text-center">
-                        <span class="mb-3 inline-flex items-center justify-center w-12 h-12  bg-[#E6EEF7]">
+                        <span class="rounded-full mb-3 inline-flex items-center justify-center w-12 h-12  bg-[#E6EEF7]">
                             <svg width="28" height="28" fill="none" viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" stroke="#3C5A7C" stroke-width="2" fill="none"/><path d="M14 16c-3 0-5 1.5-5 3v1h10v-1c0-1.5-2-3-5-3z" stroke="#3C5A7C" stroke-width="2" fill="none"/><circle cx="14" cy="11" r="3" stroke="#3C5A7C" stroke-width="2" fill="none"/></svg>
                         </span>
                         <div class="font-bold text-[#3C5A7C] mb-1">Netzwerk</div>
                         <div class="text-[#3C5A7C] text-sm">Austausch mit Experten und Gleichgesinnten</div>
                     </div>
                     <div class="bg-white  shadow p-6 flex flex-col items-center text-center">
-                        <span class="mb-3 inline-flex items-center justify-center w-12 h-12  bg-[#E6EEF7]">
+                        <span class="rounded-full mb-3 inline-flex items-center justify-center w-12 h-12  bg-[#E6EEF7]">
                             <svg width="28" height="28" fill="none" viewBox="0 0 28 28"><rect x="6" y="12" width="16" height="8" rx="2" stroke="#3C5A7C" stroke-width="2" fill="none"/><path d="M10 12V8a4 4 0 1 1 8 0v4" stroke="#3C5A7C" stroke-width="2" fill="none"/></svg>
                         </span>
                         <div class="font-bold text-[#3C5A7C] mb-1">Kooperation</div>
                         <div class="text-[#3C5A7C] text-sm">Gemeinsame Projekte und Überweisungsnetzwerk</div>
                     </div>
                     <div class="bg-white  shadow p-6 flex flex-col items-center text-center">
-                        <span class="mb-3 inline-flex items-center justify-center w-12 h-12  bg-[#E6EEF7]">
+                        <span class="rounded-full mb-3 inline-flex items-center justify-center w-12 h-12  bg-[#E6EEF7]">
                             <svg width="28" height="28" fill="none" viewBox="0 0 28 28"><rect x="4" y="8" width="20" height="12" rx="3" stroke="#3C5A7C" stroke-width="2" fill="none"/><rect x="8" y="12" width="4" height="4" rx="1" fill="#3C5A7C"/><rect x="16" y="12" width="4" height="4" rx="1" fill="#3C5A7C"/></svg>
                         </span>
                         <div class="font-bold text-[#3C5A7C] mb-1">Kommunikation</div>
@@ -1086,7 +1205,7 @@ Kompetenzteam für Zahnheilkunde,  Dr. Bader Schleißheimer Straße 12, 85221 Da
                 <div class="md:w-1/2 flex flex-col gap-8">
                     <!-- Speaker 1 -->
                     <div class="flex gap-4 items-start">
-                        <img src="assets/imgs/leonhardt.jpg" alt="Dr. Christian Leonhardt" class="w-20 h-20  object-cover border-4 border-[#E6EEF7]">
+                        <img src="assets/imgs/leonhardt.jpg" alt="Dr. Christian Leonhardt" class="rounded-full w-20 h-20  object-cover border-4 border-[#E6EEF7]">
                         <div>
                             <span class="inline-block bg-[#E6EEF7] text-[#3C5A7C] text-xs font-bold px-3 py-1  mb-1">Founder</span>
                             <div class="font-bold text-navy text-lg">Dr. Christian Leonhardt</div>
@@ -1096,7 +1215,7 @@ Als Mitgründer der Open Airway GmbH steht Dr. Christian Leonhardt für eine mod
                     </div>
                     <!-- Speaker 2 -->
                     <div class="flex gap-4 items-start">
-                         <img src="assets/imgs/muller.jpg" alt="Dr. Matthias Müller" class="w-20 h-20  object-cover border-4 border-[#E6EEF7]" style="width: 189px;
+                         <img src="assets/imgs/muller.jpg" alt="Dr. Matthias Müller" class="rounded-full w-20 h-20  object-cover border-4 border-[#E6EEF7]" style="width: 189px;
     object-position: top;">
 
                          
@@ -1109,7 +1228,7 @@ Als Mitgründer steht Dr. Matthias Müller für eine präzise und verantwortungs
                     </div>
                     <!-- Speaker 3 -->
                     <div class="flex gap-4 items-start">
-                        <img src="assets/imgs/falk.jpg" alt="Kathrin Falk" class="w-20 h-20  object-cover border-4 border-[#E6EEF7]">
+                        <img src="assets/imgs/falk.jpg" alt="Kathrin Falk" class="rounded-full w-20 h-20  object-cover border-4 border-[#E6EEF7]">
                         <div>
                             <span class="inline-block bg-[#E6EEF7] text-[#3C5A7C] text-xs font-bold px-3 py-1  mb-1">Founder</span>
                             <div class="font-bold text-navy text-lg">Kathrin Falk</div>
@@ -1202,5 +1321,38 @@ Als Mitgründerin bringt Kathrin Falk nicht nur strategisches Denken und ausgepr
     lastScroll = currentScroll;
   });
 </script>
+   <script>
+    // Highlight nav item based on scroll position
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = [
+        {id: 'hero'},
+        {id: 'ueber-uns'},
+        {id: 'vision'},
+        {id: 'curriculum'},
+        {id: 'anmeldung'},
+        {id: 'netzwerk'},
+        {id: 'kontakt'}
+      ];
+      const navLinks = document.querySelectorAll('.nav-link');
+      function onScroll() {
+        let scrollPos = window.scrollY + 120;
+        let current = 'hero';
+        for (const section of sections) {
+          const el = document.getElementById(section.id);
+          if (el && el.offsetTop <= scrollPos) {
+            current = section.id;
+          }
+        }
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    });
+    </script>
     </body>
     </html>
